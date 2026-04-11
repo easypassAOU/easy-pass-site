@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Easy Pass Preview</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #08111e;
+      color: white;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 18px;
+      background: #0d1828;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      color: white;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: rgba(255,255,255,0.14);
+    }
+
+    iframe {
+      width: 100%;
+      height: calc(100vh - 64px);
+      border: none;
+      background: #111;
+    }
+
+    .error {
+      padding: 40px 20px;
+      text-align: center;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="title" id="pageTitle">Preview</div>
+    <div class="actions">
+      <a id="downloadBtn" class="btn" href="#" target="_blank">فتح الملف</a>
+      <a class="btn" href="index.html">الرجوع للموقع</a>
+    </div>
+  </div>
+
+  <iframe id="pdfFrame"></iframe>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get("file");
+
+    const frame = document.getElementById("pdfFrame");
+    const title = document.getElementById("pageTitle");
+    const downloadBtn = document.getElementById("downloadBtn");
+
+    if (file) {
+      const pdfPath = "previews/" + file + ".pdf";
+      frame.src = pdfPath;
+      title.textContent = file + " Preview";
+      downloadBtn.href = pdfPath;
+    } else {
+      document.body.innerHTML = '<div class="error">لم يتم تحديد ملف البريفيو.</div>';
+    }
+  </script>
+</body>
+</html>
