@@ -211,11 +211,10 @@
     }
 
     .btn-primary {
-      background: var(--green);
-      color: white;
-      border-color: transparent;
-      box-shadow: 0 12px 24px rgba(22, 163, 74, 0.22);
-    }
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  box-shadow: 0 12px 30px rgba(34,197,94,0.3);
+  font-size: 16px;
+}
 
     .btn-primary:hover {
       background: var(--green-hover);
@@ -308,19 +307,28 @@
     }
 
     .preview {
-      height: 190px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 18px;
-      background:
-        linear-gradient(135deg, rgba(56, 73, 97, 0.95), rgba(37, 52, 76, 0.95));
-      color: #f1f5f9;
-      font-size: 18px;
-      font-weight: 800;
-      border-bottom: 1px solid var(--line);
-      cursor: pointer;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+
+  position: relative;
+  cursor: pointer;
+}
+
+.preview::after {
+  content: "اضغط للتحميل";
+  position: absolute;
+  bottom: 10px;
+  font-size: 13px;
+  color: #94a3b8;
+}
     }
 
     .card-body {
@@ -453,7 +461,9 @@
       }
 
       .hero-box {
-        padding: 28px 18px 24px;
+        padding: 28px 18px 24px;.hero-box {
+  backdrop-filter: blur(14px);
+}
       }
 
       .lead {
