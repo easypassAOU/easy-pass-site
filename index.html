@@ -26,30 +26,27 @@
     }
 
     :root {
-      --bg: #0f1411;
-      --bg-soft: #18201b;
-      --card: rgba(255, 255, 255, 0.045);
-      --card-border: rgba(216, 179, 106, 0.14);
-      --text: #f5f3ee;
-      --muted: #b9c1b8;
-      --gold: #d8b36a;
-      --gold-dark: #b38d49;
-      --green: #25d366;
-      --shadow: 0 20px 45px rgba(0, 0, 0, 0.38);
-      --radius: 22px;
-      --max: 1180px;
-    }
-
+  --bg: #f6f3eb;
+  --bg-soft: #ece7dc;
+  --card: #ffffff;
+  --card-border: #e3ded3;
+  --text: #1f2a22;
+  --muted: #6c756e;
+  --gold: #b8924f;
+  --gold-dark: #8f6f38;
+  --green: #25d366;
+  --shadow: 0 10px 25px rgba(0,0,0,0.06);
+  --radius: 18px;
+  --max: 1180px;
+}
+  
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(216,179,106,0.10), transparent 24%),
-        radial-gradient(circle at bottom left, rgba(255,255,255,0.03), transparent 18%),
-        linear-gradient(160deg, #0b0f0c 0%, #131a16 48%, #0f1411 100%);
-      color: var(--text);
-      min-height: 100vh;
-      line-height: 1.7;
-    }
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #f6f3eb 0%, #efe9dd 100%);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.7;
+}
 
     .container {
       width: min(var(--max), 92%);
@@ -60,10 +57,10 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(15, 20, 17, 0.84);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(216, 179, 106, 0.10);
-    }
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e6e0d5;
+}
 
     .nav {
       min-height: 74px;
@@ -73,6 +70,10 @@
       gap: 20px;
     }
 
+    .nav-links a {
+  color: #2c352d;
+      }
+    
     .logo {
       font-size: 24px;
       font-weight: 800;
@@ -109,15 +110,15 @@
     }
 
     .hero-box {
-      background: linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
-      border: 1px solid rgba(216,179,106,0.12);
+      background: #ffffff;
+      border: 1px solid #e3ded3;
       border-radius: 30px;
       padding: 46px 28px;
       text-align: center;
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
     }
-
+    
     .eyebrow {
       display: inline-block;
       padding: 8px 16px;
@@ -174,10 +175,9 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-      color: #08110d;
-      box-shadow: 0 12px 28px rgba(216,179,106,0.18);
-    }
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: white;
+}
 
     .btn-primary:hover,
     .btn-secondary:hover,
@@ -187,10 +187,10 @@
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.06);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.10);
-    }
+  background: white;
+  color: #2c352d;
+  border: 1px solid #dcd6ca;
+}
 
     .hero-note {
       margin-top: 18px;
@@ -226,8 +226,8 @@
     }
 
     .card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
+      background: white;
+      border: 1px solid #e3ded3;
       border-radius: var(--radius);
       padding: 22px;
       backdrop-filter: blur(10px);
@@ -236,8 +236,8 @@
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(216,179,106,0.30);
+      transform: translateY(-4px);
+      border-color: #d6c7a8;
     }
 
     .preview-top-link {
@@ -265,9 +265,13 @@
     .course-code {
       font-size: 24px;
       font-weight: 800;
-      color: white;
+      color: #1f2a22;
     }
 
+.course-desc {
+  color: var(--muted);
+}
+    
     .price {
       color: var(--gold);
       font-weight: 800;
@@ -324,9 +328,9 @@
     }
 
     .preview-btn {
-      background: rgba(255,255,255,0.07);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.10);
+      background: white;
+      color: #2c352d;
+      border: 1px solid #dcd6ca;
     }
 
     .preview-note {
@@ -344,13 +348,13 @@
     }
 
     .info-box {
-      background: rgba(255,255,255,0.045);
-      border: 1px solid rgba(216,179,106,0.12);
+      background: white;
+      border: 1px solid #e3ded3;
       border-radius: 20px;
       padding: 22px;
       box-shadow: var(--shadow);
     }
-
+    
     .info-box h3 {
       color: var(--gold);
       margin-bottom: 10px;
@@ -387,7 +391,7 @@
     .modal-box {
       width: min(1200px, 100%);
       height: 92vh;
-      background: #111713;
+      background: #ffffff;
       border-radius: 22px;
       overflow: hidden;
       border: 1px solid rgba(216,179,106,0.14);
@@ -397,7 +401,7 @@
     }
 
     .modal-header {
-      background: #18201b;
+      background: #f3efe6;
       border-bottom: 1px solid rgba(216,179,106,0.10);
       padding: 14px 16px;
       display: flex;
