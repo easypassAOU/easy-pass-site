@@ -37,6 +37,7 @@
       --gold-soft: #efe3cb;
       --green: #25d366;
       --green-dark: #1ea955;
+      --dark: #1f2a22;
       --shadow: 0 16px 40px rgba(25, 31, 27, 0.08);
       --shadow-soft: 0 10px 24px rgba(20, 24, 21, 0.05);
       --radius: 20px;
@@ -56,6 +57,16 @@
     .container {
       width: min(var(--max), 92%);
       margin: 0 auto;
+    }
+
+    .demand-bar {
+      background: linear-gradient(90deg, #1f2a22, #2f3a31);
+      color: #fff;
+      text-align: center;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
     }
 
     header {
@@ -251,11 +262,33 @@
       border: 1px solid #ddd5c8;
     }
 
+    .btn-whatsapp {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn-whatsapp:hover {
+      background: var(--green-dark);
+    }
+
+    .preview-btn {
+      background: white;
+      color: #2d372f;
+      border: 1px solid #d8d1c4;
+    }
+
     .hero-note {
       margin-top: 18px;
       color: var(--gold-dark);
       font-weight: 800;
       font-size: 14px;
+    }
+
+    .hero-response {
+      margin-top: 10px;
+      color: #6f796f;
+      font-size: 13px;
+      font-weight: 800;
     }
 
     .trust-strip {
@@ -314,8 +347,8 @@
 
     .offer-grid,
     .fit-grid,
-    .faq-grid,
-    .why-grid {
+    .steps-grid,
+    .faq-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
@@ -346,6 +379,19 @@
       font-size: 14px;
     }
 
+    .update-note {
+      margin: 0 auto 22px;
+      max-width: 460px;
+      text-align: center;
+      background: rgba(184,146,79,0.10);
+      color: var(--gold-dark);
+      border: 1px solid rgba(184,146,79,0.20);
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
     .materials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -353,6 +399,7 @@
     }
 
     .card {
+      position: relative;
       background: white;
       border: 1px solid #e4dccd;
       border-radius: var(--radius);
@@ -367,6 +414,35 @@
       box-shadow: var(--shadow);
     }
 
+    .badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 7px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.2px;
+      transition: all 0.25s ease;
+      z-index: 2;
+    }
+
+    .badge-top {
+      background: linear-gradient(135deg, #caa968, #8d6d34);
+      color: white;
+      box-shadow: 0 10px 25px rgba(184,146,79,0.35);
+    }
+
+    .badge-demand {
+      background: #1f2a22;
+      color: #fff;
+      box-shadow: 0 10px 20px rgba(31,42,34,0.18);
+    }
+
+    .card:hover .badge {
+      transform: translateY(-3px) scale(1.05);
+    }
+
     .preview-top-link {
       display: inline-block;
       margin-bottom: 14px;
@@ -374,6 +450,7 @@
       color: var(--gold-dark);
       font-weight: 800;
       font-size: 14px;
+      margin-top: 6px;
     }
 
     .preview-top-link:hover {
@@ -387,6 +464,7 @@
       gap: 12px;
       margin-bottom: 14px;
       flex-wrap: wrap;
+      padding-top: 4px;
     }
 
     .course-code {
@@ -433,21 +511,6 @@
       min-width: 120px;
       padding: 12px 14px;
       font-size: 14px;
-    }
-
-    .btn-whatsapp {
-      background: var(--green);
-      color: white;
-    }
-
-    .btn-whatsapp:hover {
-      background: var(--green-dark);
-    }
-
-    .preview-btn {
-      background: white;
-      color: #2d372f;
-      border: 1px solid #d8d1c4;
     }
 
     .preview-note {
@@ -587,6 +650,30 @@
       background: #111;
     }
 
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--green);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.20);
+      z-index: 9999;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+      background: var(--green-dark);
+    }
+
     @media (max-width: 900px) {
       .trust-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -628,16 +715,27 @@
       .trust-grid {
         grid-template-columns: 1fr;
       }
+
+      .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        font-size: 26px;
+        right: 16px;
+        bottom: 16px;
+      }
     }
   </style>
 </head>
 <body>
+
+  <div class="demand-bar">🔥 بعض المواد عليها طلب عالي حالياً — يفضل الحجز مبكراً</div>
 
   <header>
     <div class="container nav">
       <a href="#" class="logo">Easy <span>Pass</span></a>
       <nav class="nav-links">
         <a href="#offer">وش يشمل</a>
+        <a href="#steps">كيف يصلك</a>
         <a href="#fit">هل يناسبك؟</a>
         <a href="#materials">المواد</a>
         <a href="#faq">الأسئلة الشائعة</a>
@@ -670,6 +768,7 @@
           </div>
 
           <div class="hero-note">مراجعة أوضح، وقت أقل، وتركيز أعلى قبل الاختبار</div>
+          <div class="hero-response">⏱ الرد خلال دقائق</div>
         </div>
 
         <div class="trust-strip">
@@ -723,6 +822,30 @@
       </div>
     </section>
 
+    <section id="steps">
+      <div class="container">
+        <div class="section-head">
+          <h2>كيف يصلك المنتج؟</h2>
+          <p>الخطوات بسيطة وسريعة، من غير تسجيل معقد أو وقت ضايع.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="info-box">
+            <h3>1) اختر المادة</h3>
+            <p>ادخل على المادة المطلوبة وافتح الـ Preview أولًا إذا كنت تريد الاطلاع السريع قبل الطلب.</p>
+          </div>
+          <div class="info-box">
+            <h3>2) اطلب عبر واتساب</h3>
+            <p>اضغط زر الطلب وسيتم توجيهك مباشرة إلى الواتساب برسالة جاهزة باسم المادة.</p>
+          </div>
+          <div class="info-box">
+            <h3>3) استلم مباشرة</h3>
+            <p>بعد الدفع يتم إرسال الملفات مباشرة بصيغة PDF عبر الواتساب بشكل سريع وواضح.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="fit">
       <div class="container">
         <div class="section-head">
@@ -758,27 +881,12 @@
           <p>شاهد الـ Preview أولًا، ثم اطلب المادة المناسبة لك مباشرة.</p>
         </div>
 
+        <div class="update-note">📅 تم تحديث المحتوى لفاينل 2026</div>
+
         <div class="materials-grid">
 
           <div class="card">
-            <a class="preview-top-link" href="#" onclick="openPreview('BUS310'); return false;">شاهد الـ Preview</a>
-            <div class="course-header">
-              <div class="course-code">BUS310</div>
-              <div class="price">79 SAR – Full Exam System</div>
-            </div>
-            <div class="mini-tags">
-              <div class="mini-tag">Summary</div>
-              <div class="mini-tag">Night Exam Mode</div>
-              <div class="mini-tag">Final Focus</div>
-            </div>
-            <div class="card-actions">
-              <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20BUS310" target="_blank">اطلب المادة الآن</a>
-              <a class="btn preview-btn" href="#" onclick="openPreview('BUS310'); return false;">عرض الـ Preview</a>
-            </div>
-            <div class="preview-note">البريفيو يفتح مباشرة من ملف PDF</div>
-          </div>
-
-          <div class="card">
+            <div class="badge badge-demand">High Demand</div>
             <a class="preview-top-link" href="#" onclick="openPreview('BUS207A'); return false;">شاهد الـ Preview</a>
             <div class="course-header">
               <div class="course-code">BUS207A</div>
@@ -790,13 +898,14 @@
               <div class="mini-tag">Final Focus</div>
             </div>
             <div class="card-actions">
-              <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20BUS207A" target="_blank">اطلب المادة الآن</a>
+              <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20BUS207A%20(Full%20Exam%20System)" target="_blank">اطلب المادة الآن</a>
               <a class="btn preview-btn" href="#" onclick="openPreview('BUS207A'); return false;">عرض الـ Preview</a>
             </div>
             <div class="preview-note">البريفيو يفتح مباشرة من ملف PDF</div>
           </div>
 
           <div class="card">
+            <div class="badge badge-demand">High Demand</div>
             <a class="preview-top-link" href="#" onclick="openPreview('BUS207B'); return false;">شاهد الـ Preview</a>
             <div class="course-header">
               <div class="course-code">BUS207B</div>
@@ -808,13 +917,33 @@
               <div class="mini-tag">Final Focus</div>
             </div>
             <div class="card-actions">
-              <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20BUS207B" target="_blank">اطلب المادة الآن</a>
+              <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20BUS207B%20(Full%20Exam%20System)" target="_blank">اطلب المادة الآن</a>
               <a class="btn preview-btn" href="#" onclick="openPreview('BUS207B'); return false;">عرض الـ Preview</a>
             </div>
             <div class="preview-note">البريفيو يفتح مباشرة من ملف PDF</div>
           </div>
 
           <div class="card">
+            <div class="badge badge-top">Top Pick</div>
+            <a class="preview-top-link" href="#" onclick="openPreview('BUS310'); return false;">شاهد الـ Preview</a>
+            <div class="course-header">
+              <div class="course-code">BUS310</div>
+              <div class="price">79 SAR – Full Exam System</div>
+            </div>
+            <div class="mini-tags">
+              <div class="mini-tag">Summary</div>
+              <div class="mini-tag">Night Exam Mode</div>
+              <div class="mini-tag">Final Focus</div>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20BUS310%20(Full%20Exam%20System)" target="_blank">اطلب المادة الآن</a>
+              <a class="btn preview-btn" href="#" onclick="openPreview('BUS310'); return false;">عرض الـ Preview</a>
+            </div>
+            <div class="preview-note">البريفيو يفتح مباشرة من ملف PDF</div>
+          </div>
+
+          <div class="card">
+            <div class="badge badge-top">Top Pick</div>
             <a class="preview-top-link" href="#" onclick="openPreview('LB170'); return false;">شاهد الـ Preview</a>
             <div class="course-header">
               <div class="course-code">LB170</div>
@@ -826,7 +955,7 @@
               <div class="mini-tag">Final Focus</div>
             </div>
             <div class="card-actions">
-              <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20LB170" target="_blank">اطلب المادة الآن</a>
+              <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20LB170%20(Full%20Exam%20System)" target="_blank">اطلب المادة الآن</a>
               <a class="btn preview-btn" href="#" onclick="openPreview('LB170'); return false;">عرض الـ Preview</a>
             </div>
             <div class="preview-note">البريفيو يفتح مباشرة من ملف PDF</div>
@@ -844,7 +973,7 @@
               <div class="mini-tag">Final Focus</div>
             </div>
             <div class="card-actions">
-              <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20B325" target="_blank">اطلب المادة الآن</a>
+              <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20B325%20(Full%20Exam%20System)" target="_blank">اطلب المادة الآن</a>
               <a class="btn preview-btn" href="#" onclick="openPreview('B325'); return false;">عرض الـ Preview</a>
             </div>
             <div class="preview-note">البريفيو يفتح مباشرة من ملف PDF</div>
@@ -862,7 +991,7 @@
               <div class="mini-tag">Final Focus</div>
             </div>
             <div class="card-actions">
-              <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20SYS210" target="_blank">اطلب المادة الآن</a>
+              <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20SYS210%20(Full%20Exam%20System)" target="_blank">اطلب المادة الآن</a>
               <a class="btn preview-btn" href="#" onclick="openPreview('SYS210'); return false;">عرض الـ Preview</a>
             </div>
             <div class="preview-note">البريفيو يفتح مباشرة من ملف PDF</div>
@@ -880,7 +1009,7 @@
               <div class="mini-tag">Quick Review</div>
             </div>
             <div class="card-actions">
-              <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20SYS280" target="_blank">اطلب المادة الآن</a>
+              <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20SYS280%20(Full%20Exam%20System)" target="_blank">اطلب المادة الآن</a>
               <a class="btn preview-btn" href="#" onclick="openPreview('SYS280'); return false;">عرض الـ Preview</a>
             </div>
             <div class="preview-note">البريفيو يفتح مباشرة من ملف PDF</div>
@@ -908,7 +1037,7 @@
           </div>
           <div class="info-box">
             <h3>كيف أطلب؟</h3>
-            <p>تضغط على المادة المطلوبة ويتم تحويلك مباشرة إلى واتساب.</p>
+            <p>تضغط على المادة المطلوبة ويتم تحويلك مباشرة إلى واتساب برسالة جاهزة.</p>
           </div>
           <div class="info-box">
             <h3>وش يشمل Easy Pass؟</h3>
@@ -955,6 +1084,8 @@
       <iframe id="previewFrame" src=""></iframe>
     </div>
   </div>
+
+  <a href="https://wa.me/966555399239" target="_blank" class="whatsapp-float">💬</a>
 
   <script>
     const modal = document.getElementById("previewModal");
