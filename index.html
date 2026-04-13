@@ -69,33 +69,61 @@
       letter-spacing: 0.2px;
     }
 
-    header {
+    /* Header */
+    .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid #e9e1d3;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(233, 225, 211, 0.9);
+      transition: all 0.35s ease;
+    }
+
+    .site-header.scrolled {
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid rgba(184, 146, 79, 0.30);
+      box-shadow: 0 10px 30px rgba(25, 31, 27, 0.08);
     }
 
     .nav {
-      min-height: 78px;
+      min-height: 88px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
+      transition: min-height 0.3s ease;
     }
 
-    .logo {
-      font-size: 25px;
-      font-weight: 900;
-      color: #243027;
+    .site-header.scrolled .nav {
+      min-height: 74px;
+    }
+
+    .brand-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       text-decoration: none;
-      letter-spacing: 0.2px;
+      transition: transform 0.28s ease, opacity 0.28s ease;
     }
 
-    .logo span {
-      color: var(--gold);
+    .brand-logo-wrap:hover {
+      transform: translateY(-1px) scale(1.02);
+      opacity: 0.96;
+    }
+
+    .brand-logo {
+      height: 58px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.16));
+      transition: height 0.3s ease, filter 0.3s ease;
+    }
+
+    .site-header.scrolled .brand-logo {
+      height: 50px;
+      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.14));
     }
 
     .nav-links {
@@ -269,6 +297,7 @@
 
     .btn-whatsapp:hover {
       background: var(--green-dark);
+      box-shadow: 0 10px 24px rgba(37, 211, 102, 0.20);
     }
 
     .preview-btn {
@@ -398,20 +427,93 @@
       gap: 22px;
     }
 
+    /* Premium cards */
     .card {
       position: relative;
-      background: white;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.94));
       border: 1px solid #e4dccd;
       border-radius: var(--radius);
       padding: 22px;
       box-shadow: var(--shadow-soft);
-      transition: 0.22s ease;
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: cardReveal 0.7s ease forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.05s; }
+    .card:nth-child(2) { animation-delay: 0.12s; }
+    .card:nth-child(3) { animation-delay: 0.19s; }
+    .card:nth-child(4) { animation-delay: 0.26s; }
+    .card:nth-child(5) { animation-delay: 0.33s; }
+    .card:nth-child(6) { animation-delay: 0.40s; }
+    .card:nth-child(7) { animation-delay: 0.47s; }
+    .card:nth-child(8) { animation-delay: 0.54s; }
+
+    @keyframes cardReveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255,255,255,0.03) 35%,
+        rgba(255,255,255,0.09) 50%,
+        rgba(255,255,255,0.03) 65%,
+        transparent 100%
+      );
+      transform: translateX(-120%);
+      transition: transform 0.85s ease;
+      pointer-events: none;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius);
+      padding: 1px;
+      background: linear-gradient(
+        135deg,
+        rgba(184,146,79,0),
+        rgba(184,146,79,0.6),
+        rgba(184,146,79,0)
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      border-color: #d8c7a4;
-      box-shadow: var(--shadow);
+      transform: translateY(-8px);
+      border-color: rgba(184,146,79,0.34);
+      background: linear-gradient(180deg, rgba(255,255,255,1), rgba(255,255,255,0.96));
+      box-shadow:
+        0 20px 42px rgba(25, 31, 27, 0.10),
+        0 0 0 1px rgba(184,146,79,0.08);
+    }
+
+    .card:hover::before {
+      transform: translateX(120%);
+    }
+
+    .card:hover::after {
+      opacity: 1;
     }
 
     .badge {
@@ -451,6 +553,7 @@
       font-weight: 800;
       font-size: 14px;
       margin-top: 6px;
+      transition: 0.22s ease;
     }
 
     .preview-top-link:hover {
@@ -497,6 +600,12 @@
       border-radius: 999px;
       font-size: 13px;
       font-weight: 800;
+      transition: 0.25s ease;
+    }
+
+    .card:hover .mini-tag {
+      border-color: rgba(184,146,79,0.24);
+      background: #fffaf0;
     }
 
     .card-actions {
@@ -511,6 +620,21 @@
       min-width: 120px;
       padding: 12px 14px;
       font-size: 14px;
+      transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        background 0.28s ease,
+        border-color 0.28s ease;
+    }
+
+    .card-actions .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .card .preview-btn:hover {
+      border-color: rgba(184,146,79,0.40);
+      box-shadow: 0 10px 22px rgba(184,146,79,0.14);
+      color: var(--gold-dark);
     }
 
     .preview-note {
@@ -687,6 +811,14 @@
         padding: 14px 0;
       }
 
+      .brand-logo {
+        height: 50px;
+      }
+
+      .site-header.scrolled .brand-logo {
+        height: 44px;
+      }
+
       .hero {
         padding-top: 42px;
       }
@@ -730,9 +862,12 @@
 
   <div class="demand-bar">🔥 بعض المواد عليها طلب عالي حالياً — يفضل الحجز مبكراً</div>
 
-  <header>
+  <header class="site-header">
     <div class="container nav">
-      <a href="#" class="logo">Easy <span>Pass</span></a>
+      <a href="#" class="brand-logo-wrap" aria-label="Easy Pass Home">
+        <img src="logo.png" alt="Easy Pass Logo" class="brand-logo">
+      </a>
+
       <nav class="nav-links">
         <a href="#offer">وش يشمل</a>
         <a href="#steps">كيف يصلك</a>
@@ -1092,6 +1227,7 @@
     const frame = document.getElementById("previewFrame");
     const modalTitle = document.getElementById("modalTitle");
     const openNewTabLink = document.getElementById("openNewTab");
+    const header = document.querySelector(".site-header");
 
     function openPreview(courseCode) {
       const pdfPath = `previews/${courseCode}.pdf`;
@@ -1117,6 +1253,14 @@
     document.addEventListener("keydown", function(e) {
       if (e.key === "Escape") {
         closePreview();
+      }
+    });
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 20) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
       }
     });
   </script>
