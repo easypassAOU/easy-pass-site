@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <title>Easy Pass AOU Riyadh Summaries | ملخصات AOU الرياض</title>
-  <meta name="description" content="ملخصات AOU Riyadh احترافية تشمل Night Exam Mode + أسئلة سنوات. Easy Pass يساعدك تنجح بسهولة في الاختبارات.">
-  <meta property="og:title" content="Easy Pass AOU Riyadh Summaries">
-  <meta property="og:description" content="ملخصات AOU الرياض + Night Exam Mode + أسئلة سنوات">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://easypassaou.com">
-  <meta name="keywords" content="AOU, Easy Pass, AOU Riyadh, summaries, exam notes, BUS110, BUS207, study notes, university notes">
-  <meta name="author" content="Easy Pass">
-  <meta name="google-site-verification" content="L3pa6_xxQt1K_A87WHS55TDfIzMyb3YaVeHFgCsg-BE">
-  <link rel="canonical" href="https://easypassaou.com/">
-  <meta property="og:image" content="https://easypassaou.github.io/easy-pass-site/preview.jpg">
-  <meta name="robots" content="index, follow">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Easy Pass AOU Riyadh | Final Exam System</title>
+  <meta name="description" content="Easy Pass هو نظام مراجعة نهائية لطلاب AOU الرياض: ملخص مركز + Night Exam Mode + Preview لكل مادة. مراجعة أوضح، وقت أقل، وتركيز أعلى قبل الاختبار.">
+  <meta name="keywords" content="Easy Pass, AOU Riyadh, ملخصات AOU, Final Exam System, Night Exam Mode, BUS207A, BUS207B, BUS310, LB170, SYS210, SYS280, B325">
+  <meta name="author" content="Easy Pass">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://easypassaou.com/">
+  <meta property="og:title" content="Easy Pass | AOU Riyadh Final Exam System">
+  <meta property="og:description" content="ملخص مركز + Night Exam Mode + Preview لكل مادة. مصمم لطلاب AOU الرياض قبل الفاينل.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://easypassaou.com">
+  <meta property="og:image" content="https://easypassaou.github.io/easy-pass-site/preview.jpg">
+  <meta name="theme-color" content="#11161b">
 
   <style>
     * {
@@ -25,33 +25,36 @@
     }
 
     :root {
-      --bg: #f7f3eb;
-      --bg-soft: #efe8dc;
+      --bg: #0f1418;
+      --bg-soft: #161d22;
+      --panel: rgba(255,255,255,0.05);
+      --panel-strong: rgba(255,255,255,0.08);
       --card: #ffffff;
-      --card-border: #e6dece;
-      --text: #1f2a22;
-      --text-soft: #455047;
-      --muted: #667066;
-      --gold: #b8924f;
-      --gold-dark: #8d6d34;
-      --gold-soft: #efe3cb;
+      --card-soft: #f6f0e6;
+      --text: #f7f8f9;
+      --text-soft: #d5d8dc;
+      --muted: #9ba6ad;
+      --gold: #c6a05b;
+      --gold-dark: #9f7738;
+      --gold-soft: rgba(198,160,91,0.12);
       --green: #25d366;
       --green-dark: #1ea955;
-      --dark: #1f2a22;
-      --shadow: 0 16px 40px rgba(25, 31, 27, 0.08);
-      --shadow-soft: 0 10px 24px rgba(20, 24, 21, 0.05);
-      --radius: 20px;
+      --border: rgba(255,255,255,0.10);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+      --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.16);
+      --radius: 22px;
       --max: 1180px;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(184,146,79,0.10), transparent 28%),
-        linear-gradient(180deg, #f7f3eb 0%, #efe9de 100%);
+        radial-gradient(circle at top right, rgba(198,160,91,0.14), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(37,211,102,0.10), transparent 20%),
+        linear-gradient(180deg, #0d1216 0%, #12181d 100%);
       color: var(--text);
       min-height: 100vh;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     .container {
@@ -59,44 +62,39 @@
       margin: 0 auto;
     }
 
-    .demand-bar {
-      background: linear-gradient(90deg, #1f2a22, #2f3a31);
-      color: #fff;
+    .top-bar {
+      background: linear-gradient(90deg, #1a2329, #141b20);
+      border-bottom: 1px solid rgba(198,160,91,0.18);
+      color: #f7f8f9;
       text-align: center;
       padding: 12px 16px;
       font-size: 14px;
       font-weight: 800;
-      letter-spacing: 0.2px;
+      letter-spacing: 0.15px;
     }
 
-    /* Header */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.82);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(233, 225, 211, 0.9);
-      transition: all 0.35s ease;
+      background: rgba(10, 14, 18, 0.72);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: all 0.3s ease;
     }
 
     .site-header.scrolled {
-      background: rgba(255, 255, 255, 0.94);
-      border-bottom: 1px solid rgba(184, 146, 79, 0.30);
-      box-shadow: 0 10px 30px rgba(25, 31, 27, 0.08);
+      background: rgba(10, 14, 18, 0.9);
+      border-bottom: 1px solid rgba(198,160,91,0.18);
+      box-shadow: 0 16px 34px rgba(0,0,0,0.24);
     }
 
     .nav {
-      min-height: 88px;
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      transition: min-height 0.3s ease;
-    }
-
-    .site-header.scrolled .nav {
-      min-height: 74px;
     }
 
     .brand-logo-wrap {
@@ -104,42 +102,41 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      transition: transform 0.28s ease, opacity 0.28s ease;
+      transition: transform 0.25s ease, opacity 0.25s ease;
     }
 
     .brand-logo-wrap:hover {
-      transform: translateY(-1px) scale(1.02);
+      transform: translateY(-1px) scale(1.01);
       opacity: 0.96;
     }
 
     .brand-logo {
-  height: 85px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.16));
-  transition: height 0.3s ease, filter 0.3s ease;
+      height: 76px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+      filter: drop-shadow(0 14px 26px rgba(0,0,0,0.28));
+      transition: height 0.3s ease;
     }
 
     .site-header.scrolled .brand-logo {
-      height: 50px;
-      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.14));
+      height: 56px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
       flex-wrap: wrap;
     }
 
     .nav-links a {
-      color: #2f3a31;
+      color: #d7dde1;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 800;
-      transition: 0.22s ease;
       position: relative;
+      transition: color 0.22s ease;
     }
 
     .nav-links a:hover {
@@ -162,28 +159,30 @@
     }
 
     .hero {
-      padding: 74px 0 28px;
+      padding: 70px 0 24px;
     }
 
     .hero-box {
-      background: linear-gradient(180deg, rgba(255,255,255,0.97), rgba(255,255,255,0.90));
-      border: 1px solid var(--card-border);
-      border-radius: 32px;
-      padding: 56px 30px 42px;
-      text-align: center;
-      box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
+      border-radius: 34px;
+      padding: 58px 30px 42px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.08);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)),
+        linear-gradient(135deg, rgba(198,160,91,0.08), rgba(255,255,255,0.02));
+      box-shadow: var(--shadow);
     }
 
     .hero-box::before {
       content: "";
       position: absolute;
       top: -80px;
-      left: -80px;
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle, rgba(184,146,79,0.14), transparent 70%);
+      right: -80px;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(198,160,91,0.20), transparent 68%);
       pointer-events: none;
     }
 
@@ -191,67 +190,68 @@
       content: "";
       position: absolute;
       bottom: -90px;
-      right: -90px;
-      width: 240px;
-      height: 240px;
-      background: radial-gradient(circle, rgba(37,211,102,0.08), transparent 72%);
+      left: -90px;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(37,211,102,0.12), transparent 70%);
       pointer-events: none;
     }
 
     .eyebrow {
       display: inline-block;
+      margin-bottom: 18px;
       padding: 8px 16px;
       border-radius: 999px;
-      background: rgba(184,146,79,0.12);
-      border: 1px solid rgba(184,146,79,0.22);
-      color: var(--gold-dark);
+      background: rgba(198,160,91,0.10);
+      border: 1px solid rgba(198,160,91,0.20);
+      color: #e9d4ad;
       font-size: 13px;
-      font-weight: 800;
-      margin-bottom: 18px;
+      font-weight: 900;
     }
 
-    .hero h1 {
-      font-size: clamp(35px, 5vw, 64px);
+    h1 {
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.1;
       margin-bottom: 14px;
-      line-height: 1.12;
-      color: #1f2a22;
+      color: #ffffff;
     }
 
     .hero-subtitle {
       font-size: 20px;
-      color: #374239;
       font-weight: 800;
+      color: #eef2f4;
       margin-bottom: 16px;
     }
 
     .hero p {
-      max-width: 880px;
+      max-width: 860px;
       margin: 0 auto;
-      color: var(--muted);
       font-size: 17px;
+      color: var(--text-soft);
     }
 
     .hero-highlights {
-      margin: 24px auto 0;
+      margin: 26px auto 0;
       display: flex;
       justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
-      max-width: 900px;
+      max-width: 920px;
     }
 
     .hero-pill {
-      background: #fff;
-      border: 1px solid #e7dfd1;
-      color: #39443b;
       padding: 10px 14px;
       border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: #edf1f3;
       font-size: 14px;
       font-weight: 800;
       box-shadow: var(--shadow-soft);
     }
 
-    .hero-actions {
+    .hero-actions,
+    .cta-actions {
       display: flex;
       justify-content: center;
       gap: 14px;
@@ -270,7 +270,7 @@
       padding: 14px 24px;
       border-radius: 14px;
       font-size: 15px;
-      font-weight: 800;
+      font-weight: 900;
       transition: 0.22s ease;
     }
 
@@ -280,42 +280,42 @@
 
     .btn-primary {
       background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-      color: white;
-      box-shadow: 0 12px 22px rgba(184,146,79,0.24);
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(198,160,91,0.24);
     }
 
     .btn-secondary {
-      background: white;
-      color: #2b362d;
-      border: 1px solid #ddd5c8;
+      background: rgba(255,255,255,0.06);
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.10);
     }
 
     .btn-whatsapp {
       background: var(--green);
-      color: white;
+      color: #fff;
+      box-shadow: 0 12px 26px rgba(37,211,102,0.18);
     }
 
     .btn-whatsapp:hover {
       background: var(--green-dark);
-      box-shadow: 0 10px 24px rgba(37, 211, 102, 0.20);
     }
 
     .preview-btn {
-      background: white;
-      color: #2d372f;
-      border: 1px solid #d8d1c4;
+      background: #fff;
+      color: #172026;
+      border: 1px solid #ddd1bb;
     }
 
     .hero-note {
       margin-top: 18px;
-      color: var(--gold-dark);
+      color: #e4ca98;
       font-weight: 800;
       font-size: 14px;
     }
 
     .hero-response {
       margin-top: 10px;
-      color: #6f796f;
+      color: #b9c0c5;
       font-size: 13px;
       font-weight: 800;
     }
@@ -331,8 +331,8 @@
     }
 
     .trust-item {
-      background: rgba(255,255,255,0.92);
-      border: 1px solid #e7dece;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
       border-radius: 18px;
       padding: 16px 14px;
       text-align: center;
@@ -341,13 +341,13 @@
 
     .trust-item strong {
       display: block;
-      color: #263228;
+      color: #ffffff;
       font-size: 15px;
       margin-bottom: 4px;
     }
 
     .trust-item span {
-      color: var(--muted);
+      color: #bdc5ca;
       font-size: 13px;
       font-weight: 700;
     }
@@ -362,9 +362,9 @@
     }
 
     .section-head h2 {
-      font-size: clamp(25px, 4vw, 40px);
+      font-size: clamp(26px, 4vw, 40px);
       margin-bottom: 8px;
-      color: #202921;
+      color: #ffffff;
     }
 
     .section-head p {
@@ -375,75 +375,163 @@
     }
 
     .offer-grid,
-    .fit-grid,
-    .steps-grid,
-    .faq-grid {
+    .proof-grid,
+    .faq-grid,
+    .materials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
 
-    .info-box {
-      background: white;
-      border: 1px solid #e5ddcf;
+    .info-box,
+    .proof-box,
+    .faq-box {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
       border-radius: 20px;
       padding: 22px;
       box-shadow: var(--shadow-soft);
-      transition: 0.2s ease;
+      transition: 0.22s ease;
     }
 
-    .info-box:hover {
+    .info-box:hover,
+    .proof-box:hover,
+    .faq-box:hover,
+    .card:hover {
       transform: translateY(-4px);
-      box-shadow: var(--shadow);
+      border-color: rgba(198,160,91,0.26);
     }
 
-    .info-box h3 {
-      color: var(--gold-dark);
+    .info-box h3,
+    .proof-box h3,
+    .faq-box h3 {
+      color: #f0d9ad;
       margin-bottom: 10px;
       font-size: 20px;
     }
 
-    .info-box p {
-      color: var(--muted);
+    .info-box p,
+    .proof-box p,
+    .faq-box p {
+      color: #c5cbd0;
       font-size: 14px;
+    }
+
+    .system-box {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.04)),
+        linear-gradient(135deg, rgba(198,160,91,0.08), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .system-box h2 {
+      font-size: clamp(26px, 4vw, 38px);
+      margin-bottom: 10px;
+    }
+
+    .system-box p {
+      color: var(--muted);
+      margin-bottom: 22px;
+      font-size: 15px;
+    }
+
+    .mini-system {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .mini-step {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 18px 14px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .mini-step strong {
+      display: block;
+      color: #ffffff;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .mini-step span {
+      color: #c5cbd0;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .urgency-box {
+      max-width: 920px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(198,160,91,0.12), rgba(255,255,255,0.04));
+      border: 1px solid rgba(198,160,91,0.20);
+      border-radius: 22px;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .urgency-copy strong {
+      display: block;
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .urgency-copy span {
+      color: #d6dde1;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .urgency-badge {
+      background: rgba(255,255,255,0.08);
+      color: #f1d7a6;
+      border: 1px solid rgba(255,255,255,0.10);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 900;
+      white-space: nowrap;
     }
 
     .update-note {
       margin: 0 auto 22px;
       max-width: 460px;
       text-align: center;
-      background: rgba(184,146,79,0.10);
-      color: var(--gold-dark);
-      border: 1px solid rgba(184,146,79,0.20);
+      background: rgba(198,160,91,0.12);
+      color: #efd7a8;
+      border: 1px solid rgba(198,160,91,0.22);
       padding: 12px 18px;
       border-radius: 999px;
       font-size: 14px;
-      font-weight: 800;
+      font-weight: 900;
     }
 
-    .materials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 22px;
-    }
-
-    /* Premium cards */
     .card {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.94));
-      border: 1px solid #e4dccd;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255,255,255,0.08);
       border-radius: var(--radius);
       padding: 22px;
       box-shadow: var(--shadow-soft);
-      transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease,
-        background 0.35s ease;
+      transition: 0.28s ease;
       opacity: 0;
       transform: translateY(24px);
-      animation: cardReveal 0.7s ease forwards;
+      animation: reveal 0.7s ease forwards;
     }
 
     .card:nth-child(1) { animation-delay: 0.05s; }
@@ -455,65 +543,11 @@
     .card:nth-child(7) { animation-delay: 0.47s; }
     .card:nth-child(8) { animation-delay: 0.54s; }
 
-    @keyframes cardReveal {
+    @keyframes reveal {
       to {
         opacity: 1;
         transform: translateY(0);
       }
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        120deg,
-        transparent 0%,
-        rgba(255,255,255,0.03) 35%,
-        rgba(255,255,255,0.09) 50%,
-        rgba(255,255,255,0.03) 65%,
-        transparent 100%
-      );
-      transform: translateX(-120%);
-      transition: transform 0.85s ease;
-      pointer-events: none;
-    }
-
-    .card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: var(--radius);
-      padding: 1px;
-      background: linear-gradient(
-        135deg,
-        rgba(184,146,79,0),
-        rgba(184,146,79,0.6),
-        rgba(184,146,79,0)
-      );
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      opacity: 0;
-      transition: opacity 0.35s ease;
-      pointer-events: none;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(184,146,79,0.34);
-      background: linear-gradient(180deg, rgba(255,255,255,1), rgba(255,255,255,0.96));
-      box-shadow:
-        0 20px 42px rgba(25, 31, 27, 0.10),
-        0 0 0 1px rgba(184,146,79,0.08);
-    }
-
-    .card:hover::before {
-      transform: translateX(120%);
-    }
-
-    .card:hover::after {
-      opacity: 1;
     }
 
     .badge {
@@ -524,32 +558,24 @@
       font-weight: 900;
       padding: 7px 12px;
       border-radius: 999px;
-      letter-spacing: 0.2px;
-      transition: all 0.25s ease;
       z-index: 2;
     }
 
     .badge-top {
       background: linear-gradient(135deg, #caa968, #8d6d34);
-      color: white;
-      box-shadow: 0 10px 25px rgba(184,146,79,0.35);
+      color: #fff;
     }
 
     .badge-demand {
-      background: #1f2a22;
-      color: #fff;
-      box-shadow: 0 10px 20px rgba(31,42,34,0.18);
-    }
-
-    .card:hover .badge {
-      transform: translateY(-3px) scale(1.05);
+      background: #ffffff;
+      color: #141b20;
     }
 
     .preview-top-link {
       display: inline-block;
       margin-bottom: 14px;
       text-decoration: none;
-      color: var(--gold-dark);
+      color: #efd7a8;
       font-weight: 800;
       font-size: 14px;
       margin-top: 6px;
@@ -565,7 +591,7 @@
       justify-content: space-between;
       align-items: center;
       gap: 12px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       flex-wrap: wrap;
       padding-top: 4px;
     }
@@ -573,16 +599,24 @@
     .course-code {
       font-size: 24px;
       font-weight: 900;
-      color: #1f2a22;
+      color: #fff;
     }
 
     .price {
-      color: var(--gold-dark);
+      color: #fff;
       font-weight: 900;
       font-size: 15px;
-      background: var(--gold-soft);
+      background: rgba(198,160,91,0.16);
+      border: 1px solid rgba(198,160,91,0.20);
       padding: 6px 10px;
       border-radius: 999px;
+    }
+
+    .course-hook {
+      color: #d7dde1;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 14px;
     }
 
     .mini-tags {
@@ -593,19 +627,13 @@
     }
 
     .mini-tag {
-      background: #faf7f1;
-      border: 1px solid #e5dccd;
-      color: #3f4a41;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #edf1f3;
       padding: 8px 12px;
       border-radius: 999px;
       font-size: 13px;
       font-weight: 800;
-      transition: 0.25s ease;
-    }
-
-    .card:hover .mini-tag {
-      border-color: rgba(184,146,79,0.24);
-      background: #fffaf0;
     }
 
     .card-actions {
@@ -620,73 +648,47 @@
       min-width: 120px;
       padding: 12px 14px;
       font-size: 14px;
-      transition:
-        transform 0.28s ease,
-        box-shadow 0.28s ease,
-        background 0.28s ease,
-        border-color 0.28s ease;
-    }
-
-    .card-actions .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .card .preview-btn:hover {
-      border-color: rgba(184,146,79,0.40);
-      box-shadow: 0 10px 22px rgba(184,146,79,0.14);
-      color: var(--gold-dark);
     }
 
     .preview-note {
-      color: #6f796f;
+      color: #aeb6bc;
       font-size: 13px;
       font-weight: 700;
     }
 
-    .cta-section {
-      padding-top: 8px;
-    }
-
     .cta-box {
-      background: linear-gradient(135deg, #fffdf8, #f6efe3);
-      border: 1px solid #e6dccb;
-      border-radius: 28px;
-      padding: 36px 24px;
+      background: linear-gradient(135deg, rgba(198,160,91,0.14), rgba(255,255,255,0.04));
+      border: 1px solid rgba(198,160,91,0.20);
+      border-radius: 30px;
+      padding: 38px 24px;
       text-align: center;
       box-shadow: var(--shadow);
     }
 
     .cta-box h2 {
-      font-size: clamp(26px, 4vw, 40px);
+      font-size: clamp(28px, 4vw, 42px);
       margin-bottom: 10px;
-      color: #202921;
+      color: #ffffff;
     }
 
     .cta-box p {
-      color: var(--muted);
+      color: #d0d7dc;
       max-width: 760px;
       margin: 0 auto 20px;
       font-size: 15px;
     }
 
-    .cta-actions {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
     footer {
       padding: 26px 0 40px;
       text-align: center;
-      color: #6d766e;
+      color: #9ba6ad;
       font-size: 14px;
     }
 
     .footer-brand {
       font-size: 18px;
       font-weight: 900;
-      color: #243027;
+      color: #fff;
       margin-bottom: 6px;
     }
 
@@ -695,7 +697,7 @@
     }
 
     .footer-sub {
-      color: var(--muted);
+      color: #aeb6bc;
       font-size: 13px;
       margin-bottom: 6px;
       font-weight: 700;
@@ -705,7 +707,7 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(10, 12, 10, 0.84);
+      background: rgba(5, 8, 10, 0.9);
       z-index: 9999;
       padding: 16px;
     }
@@ -723,7 +725,7 @@
       border-radius: 22px;
       overflow: hidden;
       border: 1px solid #e8decc;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.32);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.36);
       display: flex;
       flex-direction: column;
     }
@@ -787,7 +789,7 @@
       align-items: center;
       justify-content: center;
       font-size: 28px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.20);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.28);
       z-index: 9999;
       text-decoration: none;
       transition: 0.3s ease;
@@ -799,7 +801,8 @@
     }
 
     @media (max-width: 900px) {
-      .trust-grid {
+      .trust-grid,
+      .mini-system {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
@@ -823,8 +826,20 @@
         padding-top: 42px;
       }
 
-      .hero-box {
+      .hero-box,
+      .system-box,
+      .cta-box {
         padding: 34px 18px;
+      }
+
+      .hero-pill,
+      .urgency-badge {
+        width: 100%;
+      }
+
+      .trust-grid,
+      .mini-system {
+        grid-template-columns: 1fr;
       }
 
       .modal-box {
@@ -834,18 +849,6 @@
       .modal-header {
         align-items: flex-start;
         flex-direction: column;
-      }
-
-      .hero-highlights {
-        gap: 10px;
-      }
-
-      .hero-pill {
-        width: 100%;
-      }
-
-      .trust-grid {
-        grid-template-columns: 1fr;
       }
 
       .whatsapp-float {
@@ -860,7 +863,7 @@
 </head>
 <body>
 
-  <div class="demand-bar">🔥 بعض المواد عليها طلب عالي حالياً — يفضل الحجز مبكراً</div>
+  <div class="top-bar">🔥 بعض المواد عليها طلب عالي حالياً — ابدأ الآن وشاهد الـ Preview أولاً</div>
 
   <header class="site-header">
     <div class="container nav">
@@ -870,8 +873,8 @@
 
       <nav class="nav-links">
         <a href="#offer">وش يشمل</a>
-        <a href="#steps">كيف يصلك</a>
-        <a href="#fit">هل يناسبك؟</a>
+        <a href="#system">كيف تستخدمه</a>
+        <a href="#proof">ليش Easy Pass</a>
         <a href="#materials">المواد</a>
         <a href="#faq">الأسئلة الشائعة</a>
       </nav>
@@ -882,26 +885,26 @@
     <section class="hero">
       <div class="container">
         <div class="hero-box">
-          <div class="eyebrow">Easy Pass | AOU Riyadh Exam System</div>
-          <h1>ادخل الاختبار وأنت واثق 100%</h1> 
-          <div class="hero-subtitle">ملخص + Night Exam Mode + Preview جاهز لكل مادة</div>
+          <div class="eyebrow">Easy Pass | AOU Riyadh Final Exam System</div>
+          <h1>مراجعة أوضح. وقت أقل. تركيز أعلى قبل الاختبار.</h1>
+          <div class="hero-subtitle">ملخص مركز + Night Exam Mode + Preview جاهز لكل مادة</div>
           <p>
-            Easy Pass
-  نظام مراجعة ذكي يختصر لك المنهج ويركز على أهم الأسئلة
+            Easy Pass مو مجرد ملخص. هو نظام مراجعة نهائية مصمم لطلاب AOU الرياض حتى تبدأ بسرعة، تركز على الأهم، وتدخل الفاينل وأنت أكثر جاهزية.
           </p>
+
           <div class="hero-highlights">
             <div class="hero-pill">ملخص مركز</div>
             <div class="hero-pill">Night Exam Mode</div>
-            <div class="hero-pill">أسئلة سنوات</div>
-            <div class="hero-pill">Preview جاهز</div>
+            <div class="hero-pill">Preview قبل الشراء</div>
+            <div class="hero-pill">طلب مباشر عبر واتساب</div>
           </div>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/966555399239" target="_blank">اطلب الآن عبر واتساب</a>
+            <a class="btn btn-primary" href="https://wa.me/966555399239" target="_blank">ابدأ الآن عبر واتساب</a>
             <a class="btn btn-secondary" href="#materials">شاهد المواد</a>
           </div>
 
-          <div class="hero-note">مراجعة أوضح، وقت أقل، وتركيز أعلى قبل الاختبار</div>
+          <div class="hero-note">إذا كان وقتك ضيق، Easy Pass يعطيك الطريق الأقصر للمراجعة</div>
           <div class="hero-response">⏱ الرد خلال دقائق</div>
         </div>
 
@@ -931,78 +934,91 @@
     <section id="offer">
       <div class="container">
         <div class="section-head">
-          <h2>ماذا ستحصل عليه؟</h2>
-          <p>Easy Pass ليس مجرد ملخص، بل نظام مراجعة نهائية واضح ومختصر قبل الفاينل.</p>
+          <h2>وش يشمل Easy Pass؟</h2>
+          <p>كل مادة مصممة لتختصر المراجعة وتمنحك مسار أوضح قبل الفاينل.</p>
         </div>
 
         <div class="offer-grid">
           <div class="info-box">
             <h3>Summary</h3>
-            <p>ملخص مركز ومرتب يساعدك توصل للزبدة بسرعة.</p>
+            <p>ملخص مركز ومرتب يوصل للزبدة بسرعة بدل التشتت بين ملفات كثيرة.</p>
           </div>
           <div class="info-box">
             <h3>Night Exam Mode</h3>
-            <p>مراجعة مختصرة جدًا لآخر ساعات قبل الاختبار.</p>
-          </div>
-          <div class="info-box">
-            <h3>Final Focus</h3>
-            <p>تركيز أعلى على المهم بدل التشتت بين ملفات كثيرة.</p>
+            <p>مراجعة مختصرة جدًا لآخر ساعات قبل الاختبار لما يكون الوقت فعلاً ضيق.</p>
           </div>
           <div class="info-box">
             <h3>Preview Ready</h3>
-            <p>تقدر تشوف الـ Preview أولًا قبل اتخاذ قرار الشراء.</p>
+            <p>تقدر تشوف مستوى المادة أولًا قبل اتخاذ قرار الشراء.</p>
+          </div>
+          <div class="info-box">
+            <h3>Fast Delivery</h3>
+            <p>طلب مباشر عبر واتساب واستلام واضح وسريع بدون تسجيل معقد.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="steps">
+    <section id="system">
       <div class="container">
-        <div class="section-head">
-          <h2>كيف يصلك المنتج؟</h2>
-          <p>الخطوات بسيطة وسريعة، من غير تسجيل معقد أو وقت ضايع.</p>
-        </div>
+        <div class="system-box">
+          <h2>3 خطوات فقط</h2>
+          <p>هذا هو النظام المختصر الذي يخلي Easy Pass سهل الاستخدام حتى لو باقي على الاختبار وقت قليل.</p>
 
-        <div class="steps-grid">
-          <div class="info-box">
-            <h3>1) اختر المادة</h3>
-            <p>ادخل على المادة المطلوبة وافتح الـ Preview أولًا إذا كنت تريد الاطلاع السريع قبل الطلب.</p>
+          <div class="mini-system">
+            <div class="mini-step">
+              <strong>📘 افهم المادة خلال ساعات</strong>
+              <span>ابدأ بالملخص المختصر والواضح</span>
+            </div>
+            <div class="mini-step">
+              <strong>🎯 ركّز على المتوقع</strong>
+              <span>راجع الأهم بدل التشتت</span>
+            </div>
+            <div class="mini-step">
+              <strong>⚡ راجع ليلة الاختبار</strong>
+              <span>وادخل الاختبار وأنت عارف وش يهم</span>
+            </div>
           </div>
-          <div class="info-box">
-            <h3>2) اطلب عبر واتساب</h3>
-            <p>اضغط زر الطلب وسيتم توجيهك مباشرة إلى الواتساب برسالة جاهزة باسم المادة.</p>
-          </div>
-          <div class="info-box">
-            <h3>3) استلم مباشرة</h3>
-            <p>بعد الدفع يتم إرسال الملفات مباشرة بصيغة PDF عبر الواتساب بشكل سريع وواضح.</p>
+
+          <div class="hero-actions" style="margin-top:22px;">
+            <a class="btn btn-whatsapp" href="https://wa.me/966555399239" target="_blank">اطلب الآن عبر واتساب</a>
+            <a class="btn btn-secondary" href="#materials">شاهد المواد المتوفرة</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="fit">
+    <section>
+      <div class="container">
+        <div class="urgency-box">
+          <div class="urgency-copy">
+            <strong>كل ما اقترب الاختبار، قرارك لازم يكون أسرع</strong>
+            <span>شاهد الـ Preview الآن، اختر مادتك، وابدأ مراجعتك بدل التأجيل.</span>
+          </div>
+          <div class="urgency-badge">79 SAR لكل مادة</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof">
       <div class="container">
         <div class="section-head">
-          <h2>هل Easy Pass مناسب لك؟</h2>
-          <p>هذا النظام مناسب لك إذا كنت تريد مراجعة عملية وسريعة قبل الفاينل.</p>
+          <h2>ليش Easy Pass؟</h2>
+          <p>لأن الطالب غالبًا ما يحتاج شيء أطول، بل يحتاج شيء أوضح وأسرع وأكثر تركيزًا قبل الفاينل.</p>
         </div>
 
-        <div class="fit-grid">
-          <div class="info-box">
-            <h3>وقتك ضيق</h3>
-            <p>وتحتاج مراجعة مختصرة بدل قراءة ملفات كثيرة.</p>
+        <div class="proof-grid">
+          <div class="proof-box">
+            <h3>أوضح من التشتت</h3>
+            <p>بدل ما تضيع بين ملفات كثيرة، Easy Pass يعطيك مسار مراجعة أقصر وأكثر وضوحًا.</p>
           </div>
-          <div class="info-box">
-            <h3>تبي الزبدة</h3>
-            <p>بدون حشو وبدون محتوى يضيع تركيزك.</p>
+          <div class="proof-box">
+            <h3>أسرع في البداية</h3>
+            <p>تقدر تفتح الـ Preview أولًا، تشوف المستوى، ثم تطلب مباشرة عبر واتساب بدون تعقيد.</p>
           </div>
-          <div class="info-box">
-            <h3>تبي وضوح</h3>
-            <p>مسار مراجعة واضح قبل الاختبار النهائي.</p>
-          </div>
-          <div class="info-box">
-            <h3>تبي تبدأ بسرعة</h3>
-            <p>شوف الـ Preview ثم اطلب مباشرة عبر واتساب.</p>
+          <div class="proof-box">
+            <h3>أنسب لآخر الأيام</h3>
+            <p>لما يكون باقي وقت قليل، القيمة الحقيقية تكون في التركيز على المهم بدل كثرة الصفحات.</p>
           </div>
         </div>
       </div>
@@ -1012,7 +1028,7 @@
       <div class="container">
         <div class="section-head">
           <h2>المواد المتوفرة</h2>
-          <p>شاهد الـ Preview أولًا، ثم اطلب المادة المناسبة لك مباشرة.</p>
+          <p>شاهد الـ Preview أولًا، ثم اطلب المادة المناسبة لك مباشرة عبر واتساب.</p>
         </div>
 
         <div class="update-note">📅 تم تحديث المحتوى لفاينل 2026</div>
@@ -1024,8 +1040,9 @@
             <a class="preview-top-link" href="#" onclick="openPreview('BUS207A'); return false;">شاهد الـ Preview</a>
             <div class="course-header">
               <div class="course-code">BUS207A</div>
-              <div class="price">79 SAR – Full Exam System</div>
+              <div class="price">79 SAR</div>
             </div>
+            <div class="course-hook">للطلاب اللي يبغون مراجعة مختصرة وواضحة قبل الفاينل.</div>
             <div class="mini-tags">
               <div class="mini-tag">Summary</div>
               <div class="mini-tag">Night Exam Mode</div>
@@ -1035,7 +1052,7 @@
               <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20BUS207A%20(Full%20Exam%20System)" target="_blank">اطلب المادة الآن</a>
               <a class="btn preview-btn" href="#" onclick="openPreview('BUS207A'); return false;">عرض الـ Preview</a>
             </div>
-            <div class="preview-note">البريفيو يفتح مباشرة من ملف PDF</div>
+            <div class="preview-note">ابدأ بالبريفيو إذا كنت متردد</div>
           </div>
 
           <div class="card">
@@ -1043,8 +1060,9 @@
             <a class="preview-top-link" href="#" onclick="openPreview('BUS207B'); return false;">شاهد الـ Preview</a>
             <div class="course-header">
               <div class="course-code">BUS207B</div>
-              <div class="price">79 SAR – Full Exam System</div>
+              <div class="price">79 SAR</div>
             </div>
+            <div class="course-hook">مصمم ليختصر عليك وقت المراجعة ويركزك على المهم.</div>
             <div class="mini-tags">
               <div class="mini-tag">Summary</div>
               <div class="mini-tag">Night Exam Mode</div>
@@ -1054,7 +1072,7 @@
               <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20BUS207B%20(Full%20Exam%20System)" target="_blank">اطلب المادة الآن</a>
               <a class="btn preview-btn" href="#" onclick="openPreview('BUS207B'); return false;">عرض الـ Preview</a>
             </div>
-            <div class="preview-note">البريفيو يفتح مباشرة من ملف PDF</div>
+            <div class="preview-note">البريفيو يوضح لك المستوى قبل الشراء</div>
           </div>
 
           <div class="card">
@@ -1062,8 +1080,9 @@
             <a class="preview-top-link" href="#" onclick="openPreview('BUS310'); return false;">شاهد الـ Preview</a>
             <div class="course-header">
               <div class="course-code">BUS310</div>
-              <div class="price">79 SAR – Full Exam System</div>
+              <div class="price">79 SAR</div>
             </div>
+            <div class="course-hook">إذا تبي تبدأ أسرع وتدخل المراجعة مباشرة، هذا النظام مناسب لك.</div>
             <div class="mini-tags">
               <div class="mini-tag">Summary</div>
               <div class="mini-tag">Night Exam Mode</div>
@@ -1073,7 +1092,7 @@
               <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20BUS310%20(Full%20Exam%20System)" target="_blank">اطلب المادة الآن</a>
               <a class="btn preview-btn" href="#" onclick="openPreview('BUS310'); return false;">عرض الـ Preview</a>
             </div>
-            <div class="preview-note">البريفيو يفتح مباشرة من ملف PDF</div>
+            <div class="preview-note">جاهز للطلب المباشر عبر واتساب</div>
           </div>
 
           <div class="card">
@@ -1081,8 +1100,9 @@
             <a class="preview-top-link" href="#" onclick="openPreview('LB170'); return false;">شاهد الـ Preview</a>
             <div class="course-header">
               <div class="course-code">LB170</div>
-              <div class="price">79 SAR – Full Exam System</div>
+              <div class="price">79 SAR</div>
             </div>
+            <div class="course-hook">مناسب إذا كنت تحتاج مراجعة نهائية أسرع وأكثر وضوحًا.</div>
             <div class="mini-tags">
               <div class="mini-tag">Summary</div>
               <div class="mini-tag">Quick Review</div>
@@ -1092,15 +1112,16 @@
               <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20LB170%20(Full%20Exam%20System)" target="_blank">اطلب المادة الآن</a>
               <a class="btn preview-btn" href="#" onclick="openPreview('LB170'); return false;">عرض الـ Preview</a>
             </div>
-            <div class="preview-note">البريفيو يفتح مباشرة من ملف PDF</div>
+            <div class="preview-note">شاهد البريفيو أولًا ثم قرر</div>
           </div>
 
           <div class="card">
             <a class="preview-top-link" href="#" onclick="openPreview('B325'); return false;">شاهد الـ Preview</a>
             <div class="course-header">
               <div class="course-code">B325</div>
-              <div class="price">79 SAR – Full Exam System</div>
+              <div class="price">79 SAR</div>
             </div>
+            <div class="course-hook">للطلاب اللي يبغون يختصرون المنهج ويمشون مباشرة على المهم.</div>
             <div class="mini-tags">
               <div class="mini-tag">Summary</div>
               <div class="mini-tag">Night Exam Mode</div>
@@ -1110,15 +1131,16 @@
               <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20B325%20(Full%20Exam%20System)" target="_blank">اطلب المادة الآن</a>
               <a class="btn preview-btn" href="#" onclick="openPreview('B325'); return false;">عرض الـ Preview</a>
             </div>
-            <div class="preview-note">البريفيو يفتح مباشرة من ملف PDF</div>
+            <div class="preview-note">Preview PDF متوفر قبل الشراء</div>
           </div>
 
           <div class="card">
             <a class="preview-top-link" href="#" onclick="openPreview('SYS210'); return false;">شاهد الـ Preview</a>
             <div class="course-header">
               <div class="course-code">SYS210</div>
-              <div class="price">79 SAR – Full Exam System</div>
+              <div class="price">79 SAR</div>
             </div>
+            <div class="course-hook">إذا تبي شيء واضح بدل الحشو، ابدأ من هنا.</div>
             <div class="mini-tags">
               <div class="mini-tag">Summary</div>
               <div class="mini-tag">Night Exam Mode</div>
@@ -1128,15 +1150,16 @@
               <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20SYS210%20(Full%20Exam%20System)" target="_blank">اطلب المادة الآن</a>
               <a class="btn preview-btn" href="#" onclick="openPreview('SYS210'); return false;">عرض الـ Preview</a>
             </div>
-            <div class="preview-note">البريفيو يفتح مباشرة من ملف PDF</div>
+            <div class="preview-note">بداية سريعة عبر الواتساب</div>
           </div>
 
           <div class="card">
             <a class="preview-top-link" href="#" onclick="openPreview('SYS280'); return false;">شاهد الـ Preview</a>
             <div class="course-header">
               <div class="course-code">SYS280</div>
-              <div class="price">79 SAR – Full Exam System</div>
+              <div class="price">79 SAR</div>
             </div>
+            <div class="course-hook">مراجعة نهائية أنظف وأسرع لمن يبغى يختصر الوقت.</div>
             <div class="mini-tags">
               <div class="mini-tag">Summary</div>
               <div class="mini-tag">Night Exam Mode</div>
@@ -1146,7 +1169,7 @@
               <a class="btn btn-whatsapp" href="https://wa.me/966555399239?text=السلام%20عليكم%20،%20أبغى%20مادة%20SYS280%20(Full%20Exam%20System)" target="_blank">اطلب المادة الآن</a>
               <a class="btn preview-btn" href="#" onclick="openPreview('SYS280'); return false;">عرض الـ Preview</a>
             </div>
-            <div class="preview-note">البريفيو يفتح مباشرة من ملف PDF</div>
+            <div class="preview-note">اطلب مادتك مباشرة عندما تشوف أن البريفيو مناسب لك</div>
           </div>
 
         </div>
@@ -1161,33 +1184,33 @@
         </div>
 
         <div class="faq-grid">
-          <div class="info-box">
+          <div class="faq-box">
             <h3>كم سعر المادة؟</h3>
             <p>سعر كل مادة هو 79 ريال.</p>
           </div>
-          <div class="info-box">
+          <div class="faq-box">
             <h3>هل فيه Preview؟</h3>
             <p>نعم، كل مادة متوفرة معها Preview جاهز قبل الطلب.</p>
           </div>
-          <div class="info-box">
+          <div class="faq-box">
             <h3>كيف أطلب؟</h3>
             <p>تضغط على المادة المطلوبة ويتم تحويلك مباشرة إلى واتساب برسالة جاهزة.</p>
           </div>
-          <div class="info-box">
+          <div class="faq-box">
             <h3>وش يشمل Easy Pass؟</h3>
-            <p>Summary + Night Exam Mode + تركيز أوضح قبل الفاينل.</p>
+            <p>Summary + Night Exam Mode + مسار مراجعة أقصر قبل الفاينل.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-section">
+    <section>
       <div class="container">
         <div class="cta-box">
           <h2>ابدأ مراجعتك الآن</h2>
           <p>
-            شاهد الـ Preview أولًا، ثم اطلب المادة المناسبة لك مباشرة عبر واتساب.
-            Easy Pass مصمم ليختصر عليك الوقت ويعطيك مراجعة أوضح قبل الفاينل.
+            شوف الـ Preview أولًا، ثم اطلب مادتك مباشرة عبر واتساب.
+            Easy Pass مصمم ليختصر الوقت ويعطيك مراجعة أوضح قبل الفاينل بدل الحيرة والتأجيل.
           </p>
           <div class="cta-actions">
             <a class="btn btn-primary" href="https://wa.me/966555399239" target="_blank">ابدأ الطلب الآن</a>
@@ -1201,7 +1224,7 @@
   <footer>
     <div class="container">
       <div class="footer-brand">Easy <span>Pass</span></div>
-      <div class="footer-sub">AOU Riyadh Exam System</div>
+      <div class="footer-sub">AOU Riyadh Final Exam System</div>
       <div>© جميع الحقوق محفوظة</div>
     </div>
   </footer>
@@ -1222,44 +1245,40 @@
   <a href="https://wa.me/966555399239" target="_blank" class="whatsapp-float">💬</a>
 
   <script>
-    const modal = document.getElementById("previewModal");
-    const frame = document.getElementById("previewFrame");
-    const modalTitle = document.getElementById("modalTitle");
-    const openNewTabLink = document.getElementById("openNewTab");
-    const header = document.querySelector(".site-header");
+    const modal = document.getElementById('previewModal');
+    const frame = document.getElementById('previewFrame');
+    const modalTitle = document.getElementById('modalTitle');
+    const openNewTabLink = document.getElementById('openNewTab');
+    const header = document.querySelector('.site-header');
 
     function openPreview(courseCode) {
       const pdfPath = `previews/${courseCode}.pdf`;
       modalTitle.textContent = `${courseCode} Preview`;
       frame.src = pdfPath;
       openNewTabLink.href = pdfPath;
-      modal.classList.add("active");
-      document.body.style.overflow = "hidden";
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
     }
 
     function closePreview() {
-      modal.classList.remove("active");
-      frame.src = "";
-      document.body.style.overflow = "auto";
+      modal.classList.remove('active');
+      frame.src = '';
+      document.body.style.overflow = 'auto';
     }
 
-    modal.addEventListener("click", function(e) {
-      if (e.target === modal) {
-        closePreview();
-      }
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) closePreview();
     });
 
-    document.addEventListener("keydown", function(e) {
-      if (e.key === "Escape") {
-        closePreview();
-      }
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closePreview();
     });
 
-    window.addEventListener("scroll", function () {
+    window.addEventListener('scroll', function () {
       if (window.scrollY > 20) {
-        header.classList.add("scrolled");
+        header.classList.add('scrolled');
       } else {
-        header.classList.remove("scrolled");
+        header.classList.remove('scrolled');
       }
     });
   </script>
