@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Easy Pass | AOU Riyadh</title>
-  <meta name="description" content="ملخصات AOU الرياض للفاينال. Preview جاهز لكل مادة، وطلب مباشر عبر واتساب. Easy Pass يختصر لك الأهم قبل الاختبار النهائي." />
+  <title>Easy Pass | نظام مراجعة اختبارات AOU</title>
+  <meta name="description" content="Easy Pass هو نظام مراجعة نهائية لطلاب الجامعة العربية المفتوحة AOU. Preview جاهز لكل مادة، وطلب مباشر عبر واتساب، ومحتوى مركز يساعدك على الاستعداد للاختبار بشكل أوضح." />
 
   <style>
     :root {
@@ -18,6 +18,7 @@
       --brand-dark: #44513b;
       --brand-soft: #e8ede2;
       --accent: #b28b4b;
+      --accent-dark: #8d6d36;
       --shadow: 0 18px 50px rgba(18, 26, 18, 0.08);
       --radius-xl: 28px;
       --radius-lg: 22px;
@@ -84,7 +85,7 @@
       width: 52px;
       height: 52px;
       border-radius: 16px;
-      background: #fff;
+      background: linear-gradient(145deg, #fff, #f2efe7);
       border: 1px solid rgba(24,32,24,0.08);
       box-shadow: 0 10px 22px rgba(18, 26, 18, 0.10);
       overflow: hidden;
@@ -140,7 +141,8 @@
     .btn-secondary,
     .btn-amber,
     .action-link,
-    .action-link.primary {
+    .action-link.primary,
+    .mini-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -155,7 +157,8 @@
     .btn-secondary:hover,
     .btn-amber:hover,
     .action-link:hover,
-    .action-link.primary:hover {
+    .action-link.primary:hover,
+    .mini-link:hover {
       transform: translateY(-1px);
     }
 
@@ -191,6 +194,14 @@
 
     .btn-amber:active {
       transform: translateY(0);
+    }
+
+    .mini-link {
+      padding: 11px 16px;
+      font-size: 13px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.78);
+      color: var(--text);
     }
 
     .announcement {
@@ -254,7 +265,7 @@
       line-height: 1.15;
       letter-spacing: -0.02em;
       font-weight: 800;
-      max-width: 18ch;
+      max-width: 15ch;
       color: #101810;
     }
 
@@ -263,6 +274,16 @@
       font-size: 18px;
       color: var(--muted);
       max-width: 620px;
+    }
+
+    .hero-note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(24,32,24,0.06);
+      color: var(--text);
+      font-size: 14px;
     }
 
     .price-strip {
@@ -467,6 +488,61 @@
       font-size: 14px;
     }
 
+    .about-grid,
+    .trust-grid,
+    .how-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .about-grid {
+      grid-template-columns: 1.15fr 0.85fr;
+    }
+
+    .how-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .trust-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .about-card,
+    .how-card,
+    .trust-card {
+      padding: 26px;
+      border-radius: 26px;
+    }
+
+    .about-card h3,
+    .how-card h3,
+    .trust-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .about-card p,
+    .how-card p,
+    .trust-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .about-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .about-list div {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(24,32,24,0.06);
+      font-size: 14px;
+    }
+
     .split-panel {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -646,6 +722,30 @@
       background: #fff;
     }
 
+    .guarantee-strip {
+      padding: 24px;
+      border-radius: 26px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+      background:
+        radial-gradient(circle at top left, rgba(178,139,75,0.10), transparent 36%),
+        linear-gradient(145deg, rgba(255,255,255,0.86), rgba(248,247,242,0.94));
+    }
+
+    .guarantee-strip h3 {
+      margin: 0 0 6px;
+      font-size: 24px;
+    }
+
+    .guarantee-strip p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 60ch;
+    }
+
     .faq-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -722,6 +822,14 @@
       text-align: center;
     }
 
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
     .wa-float {
       position: fixed;
       width: 60px;
@@ -749,16 +857,23 @@
       .materials-grid,
       .faq-grid,
       .split-panel,
-      .cta-band {
+      .cta-band,
+      .trust-grid,
+      .how-grid {
         grid-template-columns: 1fr 1fr;
       }
 
-      .hero-grid {
+      .hero-grid,
+      .about-grid {
         grid-template-columns: 1fr;
       }
 
       .hero-points {
         grid-template-columns: repeat(3, 1fr);
+      }
+
+      .guarantee-strip {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -798,7 +913,10 @@
       .faq-item,
       .material-card,
       .preview-panel,
-      .cta-band {
+      .cta-band,
+      .about-card,
+      .how-card,
+      .trust-card {
         padding: 22px;
       }
 
@@ -807,7 +925,9 @@
       .split-panel,
       .materials-grid,
       .faq-grid,
-      .cta-band {
+      .cta-band,
+      .how-grid,
+      .trust-grid {
         grid-template-columns: 1fr;
       }
 
@@ -836,13 +956,15 @@
           </div>
           <div class="brand-text">
             <strong>Easy Pass</strong>
-            <span>AOU Riyadh Exam System</span>
+            <span>نظام مراجعة اختبارات AOU</span>
           </div>
         </div>
 
         <nav class="nav">
+          <a href="#about">من نحن</a>
+          <a href="#how">كيف يعمل</a>
           <a href="#features">وش يشمل</a>
-          <a href="#fit">هل يناسبك؟</a>
+          <a href="#trust">الثقة</a>
           <a href="#materials">المواد</a>
           <a href="#preview">البريفيو</a>
           <a href="#faq">الأسئلة الشائعة</a>
@@ -856,18 +978,22 @@
     </header>
 
     <div class="announcement">
-      بعض المواد عليها طلب عالي حاليًا — يفضل الحجز مبكرًا قبل ضغط الفاينال
+      Easy Pass يقدم نظام مراجعة نهائية موجه لطلاب الجامعة العربية المفتوحة — Preview جاهز وطلب مباشر بخطوة واضحة
     </div>
 
     <main>
       <section class="hero">
         <div class="hero-grid">
           <div class="hero-main glass">
-            <div class="eyebrow">Final Season • مراجعة ذكية قبل الاختبار النهائي</div>
-            <h1>كل ما يحتاجه الطالب قبل الاختبار</h1>
+            <div class="eyebrow">Final Season • مراجعة ذكية ومركزة قبل الاختبار النهائي</div>
+            <h1>نظام أوضح لمراجعة الاختبار بدل التشتت بين الملفات</h1>
             <p class="hero-sub">
-              Easy Pass ليس مجرد ملخص. هو نظام مراجعة نهائية مرتب لطلاب AOU الرياض، يجمع لك الأهم فقط قبل الاختبار بدل التشتت بين ملفات كثيرة.
+              Easy Pass ليس مجرد ملخص، بل نظام مراجعة نهائية مصمم لطلاب AOU بأسلوب واضح ومختصر يساعدك على التركيز على الأهم قبل الاختبار.
             </p>
+
+            <div class="hero-note">
+              هذا النظام مناسب للطالب الذي يريد فهم شكل المراجعة بسرعة، مشاهدة Preview أولًا، ثم اتخاذ قرار الشراء وهو مرتاح وواضح.
+            </div>
 
             <div class="price-strip">
               <div class="price-pill">فاينال فقط — 79 ريال</div>
@@ -877,20 +1003,21 @@
             <div class="hero-actions">
               <a class="btn" href="https://wa.me/966555399239" target="_blank" rel="noopener">اطلب الفاينال الآن</a>
               <a class="btn-amber" href="#materials">شاهد المواد المتوفرة</a>
+              <a class="btn-secondary" href="#preview">شاهد المعاينة</a>
             </div>
 
             <div class="hero-points">
               <div class="hero-point">
-                <strong>ملخص مركز</strong>
-                <span>مختصر، واضح، ومصمم لتوصلك للزبدة بسرعة.</span>
+                <strong>مراجعة مركزة</strong>
+                <span>تنظيم أوضح للمعلومة بدل الحشو والملفات الطويلة.</span>
               </div>
               <div class="hero-point">
                 <strong>Night Exam Mode</strong>
-                <span>مراجعة مختصرة جدًا للوقت الحرج قبل الاختبار.</span>
+                <span>نسخة مراجعة أخف لآخر وقت قبل الاختبار.</span>
               </div>
               <div class="hero-point">
                 <strong>Preview جاهز</strong>
-                <span>شاهد نموذج المادة أولًا قبل اتخاذ قرار الشراء.</span>
+                <span>تشوف مستوى المادة قبل الطلب وتكوّن انطباعك بنفسك.</span>
               </div>
             </div>
           </div>
@@ -898,30 +1025,30 @@
           <aside class="hero-side glass">
             <div class="side-card">
               <span class="label">الفكرة ببساطة</span>
-              <h3>أقل وقت، أوضح مراجعة، وتركيز أعلى قبل الاختبار</h3>
-              <p>مصمم لطبيعة اختبارات AOU الرياض، وبأسلوب مريح بصريًا وواضح ذهنيًا وقت الضغط.</p>
+              <h3>محتوى منظم، قرار شراء أوضح، وتجربة أسهل للطالب</h3>
+              <p>بدل ما تبحث بين مصادر كثيرة، Easy Pass يعطيك طريقة مراجعة مرتبة ومباشرة تناسب فترة الضغط قبل الاختبار.</p>
             </div>
 
             <div class="feature-stack">
               <div class="feature-row">
                 <div class="feature-badge">1</div>
                 <div class="feature-copy">
-                  <strong>شاهد الـ Preview</strong>
-                  <span>تفتح نموذج المادة مباشرة وتكوّن انطباع واضح قبل الطلب.</span>
+                  <strong>شاهد المعاينة أولًا</strong>
+                  <span>اطّلع على Preview المادة داخل الموقع قبل الطلب.</span>
                 </div>
               </div>
               <div class="feature-row">
                 <div class="feature-badge">2</div>
                 <div class="feature-copy">
-                  <strong>اطلب بخطوة بسيطة</strong>
-                  <span>ضغطة واحدة تنقلك إلى واتساب برسالة جاهزة باسم المادة.</span>
+                  <strong>اطلب بخطوة واضحة</strong>
+                  <span>الطلب يتم عبر واتساب برسالة جاهزة باسم المادة.</span>
                 </div>
               </div>
               <div class="feature-row">
                 <div class="feature-badge">3</div>
                 <div class="feature-copy">
-                  <strong>استلم مباشرة</strong>
-                  <span>الملفات تصلك بشكل واضح وسريع بعد إتمام الطلب.</span>
+                  <strong>ابدأ المراجعة فورًا</strong>
+                  <span>تستلم المادة بصيغة واضحة وسهلة البدء بدون تعقيد.</span>
                 </div>
               </div>
             </div>
@@ -929,11 +1056,70 @@
         </div>
       </section>
 
+      <section class="section" id="about">
+        <div class="section-head">
+          <div>
+            <h2>من نحن</h2>
+            <p>Easy Pass هو نظام مراجعة نهائية مصمم خصيصًا لطلاب الجامعة العربية المفتوحة، ويهدف إلى تبسيط المراجعة وإبراز الأهم قبل الاختبار.</p>
+          </div>
+          <div class="floating-note">موجه لطالب AOU الباحث عن الوضوح والاختصار</div>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-card glass">
+            <h3>فكرة Easy Pass</h3>
+            <p>
+              نحن لا نركز على كثرة الصفحات، بل على بناء تجربة مراجعة أوضح: محتوى منظم، Preview قبل الطلب، وخطوات بسيطة تساعد الطالب على الدخول في المذاكرة بسرعة وثقة.
+            </p>
+
+            <div class="about-list">
+              <div><strong>موجه لطلاب AOU:</strong> المحتوى وطريقة العرض مبنيان على احتياج الطالب الجامعي في فترة الاختبارات.</div>
+              <div><strong>مراجعة نهائية عملية:</strong> الهدف هو مساعدتك على معرفة الأهم، لا إغراقك في تفاصيل مشتتة.</div>
+              <div><strong>تجربة شراء واضحة:</strong> شاهد المعاينة أولًا، ثم اطلب المادة المناسبة مباشرة.</div>
+            </div>
+          </article>
+
+          <article class="about-card glass">
+            <h3>رؤيتنا</h3>
+            <p>
+              أن يصبح Easy Pass مرجعًا منظمًا وموثوقًا للطالب الذي يريد مراجعة فعالة، واختصارًا ذكيًا للطريق قبل الاختبار النهائي.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="how">
+        <div class="section-head">
+          <div>
+            <h2>كيف يعمل Easy Pass؟</h2>
+            <p>التجربة بسيطة وواضحة حتى يشعر الطالب أنه يتعامل مع نظام منظم، وليس مجرد ملف معروض للبيع.</p>
+          </div>
+          <div class="floating-note">3 خطوات فقط</div>
+        </div>
+
+        <div class="how-grid">
+          <article class="how-card glass">
+            <h3>1) اختر المادة</h3>
+            <p>تصفح المواد المتوفرة، وحدد المادة التي تريدها حسب احتياجك الحالي في الفاينال.</p>
+          </article>
+
+          <article class="how-card glass">
+            <h3>2) شاهد الـ Preview</h3>
+            <p>قبل الطلب، يمكنك الاطلاع على نموذج المعاينة حتى تتأكد من مستوى الترتيب وطريقة عرض المحتوى.</p>
+          </article>
+
+          <article class="how-card glass">
+            <h3>3) اطلب وابدأ</h3>
+            <p>بعد المعاينة، اطلب المادة عبر واتساب وابدأ مراجعتك بخطوة واضحة وسريعة.</p>
+          </article>
+        </div>
+      </section>
+
       <section class="section" id="features">
         <div class="section-head">
           <div>
-            <h2>وش فعليًا راح تستفيد؟</h2>
-            <p>التركيز هنا ليس على كثرة المحتوى، بل على تقديم مراجعة نهائية ذكية تخدم هدف واحد: تدخل الاختبار وأنت أعرف بالأهم.</p>
+            <h2>وش فعليًا يشمل النظام؟</h2>
+            <p>Easy Pass يقدم مراجعة نهائية ذكية تساعدك على الاستعداد للاختبار من دون تشتت أو حشو زائد.</p>
           </div>
           <div class="floating-note">مناسب أكثر لفترة الفاينال الحالية</div>
         </div>
@@ -955,6 +1141,33 @@
             <div class="benefit-icon">👀</div>
             <h3>Preview جاهز</h3>
             <p>تشوف مستوى المادة قبل الشراء، وهذا يرفع الثقة ويقلل التردد.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="trust">
+        <div class="section-head">
+          <div>
+            <h2>ليش يثق الطالب بـ Easy Pass؟</h2>
+            <p>بناء الثقة لا يأتي من الكلام فقط، بل من وضوح الخطوات، وجود المعاينة، وسهولة الوصول للمعلومة المطلوبة.</p>
+          </div>
+          <div class="floating-note">وضوح قبل الطلب</div>
+        </div>
+
+        <div class="trust-grid">
+          <article class="trust-card glass">
+            <h3>معاينة قبل الشراء</h3>
+            <p>الطالب لا يشتري وهو لا يعرف المستوى، لذلك المعاينة جزء أساسي من التجربة.</p>
+          </article>
+
+          <article class="trust-card glass">
+            <h3>خطوات بسيطة وواضحة</h3>
+            <p>تصفح المادة، شاهد الـ Preview، ثم اطلب مباشرة. لا يوجد تشتيت ولا تعقيد في اتخاذ القرار.</p>
+          </article>
+
+          <article class="trust-card glass">
+            <h3>تركيز على الاختبار</h3>
+            <p>المحتوى موجه للمراجعة العملية قبل الفاينال، وليس مجرد تجميع عام للمعلومات.</p>
           </article>
         </div>
       </section>
@@ -1000,7 +1213,7 @@
 
               <div class="check-item">
                 <div class="check-mark">AOU</div>
-                <div><b>مصمم للسياق الصحيح</b><br>اللغة، الترتيب، وطريقة العرض كلها موجهة لطالب AOU الرياض.</div>
+                <div><b>مصمم للسياق الصحيح</b><br>اللغة، الترتيب، وطريقة العرض كلها موجهة لطالب AOU.</div>
               </div>
             </div>
           </div>
@@ -1013,21 +1226,21 @@
             <h2>المواد المتوفرة الآن</h2>
             <p>شاهد الـ Preview أولًا، وبعدها اطلب المادة المناسبة لك مباشرة عبر واتساب.</p>
           </div>
-          <div class="floating-note">تم تحديث المحتوى للمواد 2026 </div>
+          <div class="floating-note">تم تحديث المحتوى للمواد 2026</div>
         </div>
 
         <div class="materials-grid">
           <article class="material-card glass">
             <div class="tag-row">
-              <span class="tag">High Demand</span>
+              <span class="tag">طلب مرتفع</span>
               <span class="preview-chip">Preview جاهز</span>
             </div>
             <h3>BUS207A</h3>
-            <div class="material-price">79 SAR — Final System</div>
+            <div class="material-price">79 ريال — Final System</div>
             <div class="mini-features">
-              <span>Summary</span>
+              <span>ملخص مركز</span>
               <span>Night Exam Mode</span>
-              <span>Final Focus</span>
+              <span>تركيز على الفاينال</span>
             </div>
             <div class="material-actions">
               <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20BUS207A" target="_blank" rel="noopener">اطلب المادة</a>
@@ -1037,15 +1250,15 @@
 
           <article class="material-card glass">
             <div class="tag-row">
-              <span class="tag">High Demand</span>
+              <span class="tag">طلب مرتفع</span>
               <span class="preview-chip">Preview جاهز</span>
             </div>
             <h3>BUS207B</h3>
-            <div class="material-price">79 SAR — Final System</div>
+            <div class="material-price">79 ريال — Final System</div>
             <div class="mini-features">
-              <span>Summary</span>
+              <span>ملخص مركز</span>
               <span>Night Exam Mode</span>
-              <span>Final Focus</span>
+              <span>تركيز على الفاينال</span>
             </div>
             <div class="material-actions">
               <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20BUS207B" target="_blank" rel="noopener">اطلب المادة</a>
@@ -1055,15 +1268,15 @@
 
           <article class="material-card glass">
             <div class="tag-row">
-              <span class="tag">Top Pick</span>
+              <span class="tag">اختيار شائع</span>
               <span class="preview-chip">Preview جاهز</span>
             </div>
             <h3>BUS310</h3>
-            <div class="material-price">79 SAR — Final System</div>
+            <div class="material-price">79 ريال — Final System</div>
             <div class="mini-features">
-              <span>Summary</span>
+              <span>ملخص مركز</span>
               <span>Night Exam Mode</span>
-              <span>Final Focus</span>
+              <span>تركيز على الفاينال</span>
             </div>
             <div class="material-actions">
               <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20BUS310" target="_blank" rel="noopener">اطلب المادة</a>
@@ -1073,15 +1286,15 @@
 
           <article class="material-card glass">
             <div class="tag-row">
-              <span class="tag">Top Pick</span>
+              <span class="tag">اختيار شائع</span>
               <span class="preview-chip">Preview جاهز</span>
             </div>
             <h3>LB170</h3>
-            <div class="material-price">79 SAR — Final System</div>
+            <div class="material-price">79 ريال — Final System</div>
             <div class="mini-features">
-              <span>Summary</span>
+              <span>ملخص مركز</span>
               <span>Quick Review</span>
-              <span>Final Focus</span>
+              <span>تركيز على الفاينال</span>
             </div>
             <div class="material-actions">
               <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20LB170" target="_blank" rel="noopener">اطلب المادة</a>
@@ -1091,15 +1304,15 @@
 
           <article class="material-card glass">
             <div class="tag-row">
-              <span class="tag">Available</span>
+              <span class="tag">متوفر</span>
               <span class="preview-chip">Preview جاهز</span>
             </div>
             <h3>B325</h3>
-            <div class="material-price">79 SAR — Final System</div>
+            <div class="material-price">79 ريال — Final System</div>
             <div class="mini-features">
-              <span>Summary</span>
+              <span>ملخص مركز</span>
               <span>Night Exam Mode</span>
-              <span>Final Focus</span>
+              <span>تركيز على الفاينال</span>
             </div>
             <div class="material-actions">
               <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20B325" target="_blank" rel="noopener">اطلب المادة</a>
@@ -1109,15 +1322,15 @@
 
           <article class="material-card glass">
             <div class="tag-row">
-              <span class="tag">Available</span>
+              <span class="tag">متوفر</span>
               <span class="preview-chip">Preview جاهز</span>
             </div>
             <h3>SYS210</h3>
-            <div class="material-price">79 SAR — Final System</div>
+            <div class="material-price">79 ريال — Final System</div>
             <div class="mini-features">
-              <span>Summary</span>
+              <span>ملخص مركز</span>
               <span>Night Exam Mode</span>
-              <span>Final Focus</span>
+              <span>تركيز على الفاينال</span>
             </div>
             <div class="material-actions">
               <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20SYS210" target="_blank" rel="noopener">اطلب المادة</a>
@@ -1127,15 +1340,15 @@
 
           <article class="material-card glass">
             <div class="tag-row">
-              <span class="tag">Available</span>
+              <span class="tag">متوفر</span>
               <span class="preview-chip">Preview جاهز</span>
             </div>
             <h3>SYS280</h3>
-            <div class="material-price">79 SAR — Final System</div>
+            <div class="material-price">79 ريال — Final System</div>
             <div class="mini-features">
-              <span>Summary</span>
+              <span>ملخص مركز</span>
               <span>Night Exam Mode</span>
-              <span>Final Focus</span>
+              <span>تركيز على الفاينال</span>
             </div>
             <div class="material-actions">
               <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20SYS280" target="_blank" rel="noopener">اطلب المادة</a>
@@ -1145,11 +1358,23 @@
         </div>
       </section>
 
+      <section class="section">
+        <div class="guarantee-strip glass">
+          <div>
+            <h3>وضوح قبل الطلب</h3>
+            <p>
+              نحن نؤمن أن الطالب يجب أن يرى مستوى العرض أولًا، لذلك المعاينة جزء أساسي من التجربة. شاهد الـ Preview، كوّن انطباعك، ثم اطلب وأنت مرتاح.
+            </p>
+          </div>
+          <a class="btn-amber" href="#preview">شاهد المعاينة الآن</a>
+        </div>
+      </section>
+
       <section class="section" id="preview">
         <div class="section-head">
           <div>
-            <h2>معاينة سريعة</h2>
-            <p>هذا قسم معاينة داخل الصفحة. تقدر تغيّره لأي ملف PDF لاحقًا إذا رغبت.</p>
+            <h2>معاينة سريعة داخل الموقع</h2>
+            <p>هذا القسم يعطي الطالب إحساسًا أوضح بالمحتوى قبل الانتقال لطلب المادة.</p>
           </div>
           <div class="floating-note">المعروض الآن: BUS207A</div>
         </div>
@@ -1186,8 +1411,8 @@
           </article>
 
           <article class="faq-item glass">
-            <h3>وش يشمل Easy Pass؟</h3>
-            <p>Summary + Night Exam Mode + تنظيم أوضح للمراجعة قبل الفاينال، مع Preview جاهز للاطلاع المسبق.</p>
+            <h3>هل Easy Pass مجرد ملخص؟</h3>
+            <p>لا، Easy Pass يقدم طريقة مراجعة أوضح تشمل تنظيم المحتوى، نسخة مختصرة للمراجعة، ومعاينة قبل الشراء.</p>
           </article>
         </div>
       </section>
@@ -1208,8 +1433,15 @@
     </main>
 
     <footer>
-      Easy Pass — AOU Riyadh Exam System<br />
+      Easy Pass — نظام مراجعة اختبارات AOU<br />
       © جميع الحقوق محفوظة
+
+      <div class="footer-links">
+        <a class="mini-link" href="#about">من نحن</a>
+        <a class="mini-link" href="#how">كيف يعمل</a>
+        <a class="mini-link" href="#faq">الأسئلة الشائعة</a>
+        <a class="mini-link" href="https://wa.me/966555399239" target="_blank" rel="noopener">التواصل عبر واتساب</a>
+      </div>
     </footer>
   </div>
 
