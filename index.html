@@ -23,28 +23,24 @@
 
   <style>
     :root {
-      --bg: #f6f1e7;
-      --bg-2: #fbf8f2;
-      --surface: rgba(255, 255, 255, 0.78);
-      --surface-strong: #ffffff;
-      --text: #121712;
-      --muted: #5d655d;
-      --line: rgba(18, 23, 18, 0.1);
+      --bg: #08111e;
+      --bg-2: #0b1627;
+      --surface: #0d1828;
+      --surface-2: #0f1c2e;
+      --surface-3: #12233a;
+      --text: #ffffff;
+      --muted: #b8c0cc;
+      --line: rgba(245, 185, 66, 0.14);
 
-      --brand: #3f4d3c;
-      --brand-2: #5a6b54;
-      --brand-dark: #2f3a2d;
-      --brand-soft: #edf1e8;
+      --accent: #f5b942;
+      --accent-dark: #d89e2f;
+      --accent-soft: rgba(245, 185, 66, 0.12);
 
-      --accent: #c7a256;
-      --accent-2: #b7882e;
-      --accent-dark: #8a6828;
+      --shadow: 0 14px 35px rgba(0, 0, 0, 0.28);
+      --shadow-strong: 0 18px 45px rgba(0, 0, 0, 0.34);
 
-      --shadow: 0 18px 50px rgba(18, 26, 18, 0.08);
-      --shadow-strong: 0 24px 70px rgba(18, 26, 18, 0.12);
-
-      --radius-xl: 30px;
-      --radius-lg: 24px;
+      --radius-xl: 28px;
+      --radius-lg: 22px;
       --radius-md: 18px;
       --max: 1180px;
     }
@@ -63,9 +59,9 @@
       color: var(--text);
       line-height: 1.75;
       background:
-        radial-gradient(circle at top right, rgba(199, 162, 86, 0.14), transparent 28%),
-        radial-gradient(circle at top left, rgba(63, 77, 60, 0.12), transparent 30%),
-        linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%);
+        radial-gradient(circle at top right, rgba(245, 185, 66, 0.09), transparent 24%),
+        radial-gradient(circle at top left, rgba(245, 185, 66, 0.05), transparent 20%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
     }
 
     a {
@@ -84,10 +80,10 @@
     }
 
     .glass {
-      background: var(--surface);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.6);
+      background: rgba(13, 24, 40, 0.86);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(245, 185, 66, 0.08);
       box-shadow: var(--shadow);
     }
 
@@ -105,6 +101,8 @@
       gap: 18px;
       padding: 14px 18px;
       border-radius: 999px;
+      background: rgba(8, 17, 30, 0.92);
+      border: 1px solid rgba(245, 185, 66, 0.1);
     }
 
     .brand {
@@ -117,14 +115,14 @@
     .brand-mark {
       width: 56px;
       height: 56px;
-      border-radius: 18px;
-      background: linear-gradient(145deg, #fff, #f0ebdf);
-      border: 1px solid rgba(18, 23, 18, 0.08);
-      box-shadow: 0 12px 24px rgba(18, 26, 18, 0.1);
+      border-radius: 16px;
+      background: #0f1c2e;
+      border: 1px solid rgba(245, 185, 66, 0.18);
       overflow: hidden;
       flex: 0 0 auto;
       display: grid;
       place-items: center;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.25);
     }
 
     .brand-mark img {
@@ -137,6 +135,7 @@
       display: block;
       font-size: 15px;
       white-space: nowrap;
+      color: #fff;
     }
 
     .brand-text span {
@@ -161,7 +160,7 @@
     }
 
     .nav a:hover {
-      color: var(--text);
+      color: #fff;
     }
 
     .topbar-actions {
@@ -196,179 +195,139 @@
       transform: translateY(-1px);
     }
 
-    .btn {
-      padding: 14px 22px;
-      font-size: 14px;
-      background: linear-gradient(145deg, var(--brand-dark), var(--brand-2));
-      color: #fff;
-      box-shadow: 0 16px 30px rgba(46, 57, 44, 0.24);
-      border: 1px solid transparent;
+    .btn,
+    .btn-amber,
+    .action-link.primary {
+      background: var(--accent);
+      color: #08111e;
+      border: 1px solid rgba(245, 185, 66, 0.3);
+      box-shadow: 0 12px 28px rgba(245, 185, 66, 0.18);
     }
 
-    .btn-secondary {
-      padding: 14px 22px;
-      font-size: 14px;
-      background: rgba(255, 255, 255, 0.82);
-      color: var(--text);
-      border: 1px solid var(--line);
+    .btn:hover,
+    .btn-amber:hover,
+    .action-link.primary:hover {
+      background: var(--accent-dark);
+      box-shadow: 0 16px 34px rgba(245, 185, 66, 0.22);
     }
 
+    .btn,
     .btn-amber {
       padding: 14px 24px;
       font-size: 14px;
-      background: linear-gradient(145deg, var(--accent), var(--accent-2));
-      color: #fff;
-      border: 1px solid rgba(138, 104, 40, 0.22);
-      box-shadow: 0 16px 32px rgba(183, 136, 46, 0.28);
     }
 
-    .btn-amber:hover {
-      box-shadow: 0 18px 36px rgba(183, 136, 46, 0.34);
+    .btn-secondary {
+      padding: 14px 24px;
+      font-size: 14px;
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(245, 185, 66, 0.32);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(245, 185, 66, 0.08);
     }
 
     .mini-link {
       padding: 11px 16px;
       font-size: 13px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.84);
-      color: var(--text);
+      border: 1px solid rgba(245, 185, 66, 0.14);
+      background: #0f1c2e;
+      color: #fff;
     }
 
     .announcement {
       margin-top: 18px;
-      padding: 14px 18px;
-      border: 1px solid rgba(199, 162, 86, 0.18);
-      background: linear-gradient(145deg, rgba(199, 162, 86, 0.12), rgba(255, 255, 255, 0.76));
-      color: #61491f;
+      padding: 13px 18px;
+      border: 1px solid rgba(245, 185, 66, 0.16);
+      background: rgba(245, 185, 66, 0.08);
+      color: #f5d38a;
       border-radius: 999px;
       text-align: center;
       font-size: 14px;
-      box-shadow: 0 10px 24px rgba(178, 139, 75, 0.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
     }
 
     .hero {
-      padding: 52px 0 26px;
+      padding: 42px 0 22px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 28px;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 24px;
       align-items: stretch;
     }
 
     .hero-main,
     .hero-side {
       border-radius: var(--radius-xl);
-      padding: 36px;
+      padding: 34px;
       position: relative;
       overflow: hidden;
-    }
-
-    .hero-main {
-      background:
-        radial-gradient(circle at bottom left, rgba(63, 77, 60, 0.12), transparent 30%),
-        radial-gradient(circle at top right, rgba(199, 162, 86, 0.16), transparent 26%);
-    }
-
-    .hero-main::before {
-      content: "";
-      position: absolute;
-      inset: auto auto -70px -70px;
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(63, 77, 60, 0.16), transparent 70%);
-      pointer-events: none;
+      background: linear-gradient(180deg, #0d1828 0%, #0f1c2e 100%);
+      border: 1px solid rgba(245, 185, 66, 0.1);
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 14px;
+      padding: 9px 14px;
       border-radius: 999px;
-      background: rgba(63, 77, 60, 0.1);
-      color: var(--brand-dark);
+      background: rgba(245, 185, 66, 0.1);
+      color: #f7cf79;
       font-size: 13px;
       font-weight: 700;
       margin-bottom: 16px;
+      border: 1px solid rgba(245, 185, 66, 0.12);
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(35px, 4.5vw, 52px);
-      line-height: 1.1;
+      font-size: clamp(34px, 4.4vw, 52px);
+      line-height: 1.15;
       letter-spacing: -0.02em;
       font-weight: 800;
-      max-width: 15ch;
-      color: #101710;
+      max-width: 14ch;
+      color: #fff;
     }
 
     .hero-sub {
-      margin: 18px 0 0;
+      margin: 10px 0 0;
       font-size: 18px;
+      color: #f3f5f7;
+      max-width: 650px;
+      font-weight: 700;
+    }
+
+    .hero-mini {
+      margin: 10px 0 0;
+      font-size: 15px;
       color: var(--muted);
-      max-width: 620px;
+      max-width: 520px;
+      line-height: 1.8;
     }
 
-    .hero-note {
-      margin-top: 16px;
-      padding: 15px 16px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid rgba(18, 23, 18, 0.06);
-      color: var(--text);
-      font-size: 14px;
-    }
-
-    .system-bar {
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
+    .hero-list {
+      margin: 20px 0 0;
+      display: grid;
       gap: 10px;
     }
 
-    .system-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 11px 14px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid rgba(18, 23, 18, 0.08);
-      font-size: 13px;
-      color: var(--text);
-      font-weight: 700;
-      box-shadow: 0 10px 22px rgba(18, 26, 18, 0.05);
-    }
-
-    .price-strip {
+    .hero-list-item {
       display: flex;
       align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 24px;
-    }
-
-    .price-pill,
-    .package-pill {
-      border-radius: 999px;
-      padding: 11px 16px;
-      font-size: 14px;
+      gap: 10px;
+      color: #eef2f6;
+      font-size: 15px;
       font-weight: 700;
     }
 
-    .price-pill {
-      background: #172016;
-      color: #fff;
-      box-shadow: 0 12px 24px rgba(23, 32, 22, 0.18);
-    }
-
-    .package-pill {
-      background: rgba(255, 255, 255, 0.84);
-      border: 1px solid var(--line);
+    .hero-list-item span {
       color: var(--muted);
+      font-weight: 400;
     }
 
     .hero-actions {
@@ -376,55 +335,27 @@
       align-items: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 28px;
-    }
-
-    .hero-points {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 28px;
-    }
-
-    .hero-point {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.84);
-      border: 1px solid rgba(18, 23, 18, 0.06);
-      box-shadow: 0 12px 24px rgba(18, 26, 18, 0.04);
-    }
-
-    .hero-point strong {
-      display: block;
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-
-    .hero-point span {
-      display: block;
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.6;
+      margin-top: 24px;
     }
 
     .hero-side {
       display: flex;
       flex-direction: column;
-      gap: 18px;
       justify-content: space-between;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(246, 243, 235, 0.94));
+      gap: 18px;
+      background: linear-gradient(180deg, #0f1c2e 0%, #12233a 100%);
     }
 
     .side-card {
-      padding: 24px;
+      padding: 22px;
       border-radius: 22px;
-      background: rgba(255, 255, 255, 0.8);
-      border: 1px solid rgba(18, 23, 18, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(245, 185, 66, 0.1);
     }
 
     .side-card .label {
       font-size: 12px;
-      color: var(--muted);
+      color: #f5d38a;
       margin-bottom: 8px;
       display: block;
     }
@@ -432,7 +363,8 @@
     .side-card h3 {
       margin: 0 0 10px;
       font-size: 25px;
-      line-height: 1.25;
+      line-height: 1.3;
+      color: #fff;
     }
 
     .side-card p {
@@ -450,8 +382,8 @@
     .stat-box {
       padding: 16px;
       border-radius: 18px;
-      background: rgba(63, 77, 60, 0.07);
-      border: 1px solid rgba(63, 77, 60, 0.08);
+      background: rgba(245, 185, 66, 0.08);
+      border: 1px solid rgba(245, 185, 66, 0.12);
       text-align: center;
     }
 
@@ -460,53 +392,12 @@
       font-size: 20px;
       line-height: 1;
       margin-bottom: 6px;
-      color: var(--brand-dark);
+      color: #fff;
     }
 
     .stat-box span {
       font-size: 12px;
       color: var(--muted);
-    }
-
-    .feature-stack {
-      display: grid;
-      gap: 12px;
-    }
-
-    .feature-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(63, 77, 60, 0.08);
-      border: 1px solid rgba(63, 77, 60, 0.1);
-    }
-
-    .feature-badge {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      background: #fff;
-      font-size: 16px;
-      flex: 0 0 auto;
-      font-weight: 700;
-      box-shadow: 0 8px 18px rgba(18, 26, 18, 0.06);
-    }
-
-    .feature-copy strong {
-      display: block;
-      font-size: 15px;
-      margin-bottom: 4px;
-    }
-
-    .feature-copy span {
-      display: block;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
     }
 
     .section {
@@ -525,6 +416,7 @@
       margin: 0;
       font-size: clamp(28px, 4vw, 40px);
       line-height: 1.15;
+      color: #fff;
     }
 
     .section-head p {
@@ -554,23 +446,23 @@
     .how-card,
     .trust-card,
     .result-card {
-      border-radius: 26px;
-      padding: 26px;
+      border-radius: 24px;
+      padding: 24px;
+      background: #0f1c2e;
+      border: 1px solid rgba(245, 185, 66, 0.1);
     }
 
-    .benefit {
-      min-height: 210px;
-    }
-
-    .benefit-icon {
-      width: 48px;
-      height: 48px;
+    .benefit-icon,
+    .how-icon {
+      width: 52px;
+      height: 52px;
       border-radius: 16px;
-      background: rgba(63, 77, 60, 0.12);
+      background: rgba(245, 185, 66, 0.1);
       display: grid;
       place-items: center;
-      font-size: 20px;
+      font-size: 22px;
       margin-bottom: 16px;
+      border: 1px solid rgba(245, 185, 66, 0.12);
     }
 
     .benefit h3,
@@ -580,6 +472,7 @@
     .result-card h3 {
       margin: 0 0 10px;
       font-size: 21px;
+      color: #fff;
     }
 
     .benefit p,
@@ -596,8 +489,8 @@
       margin-top: 14px;
       font-size: 13px;
       font-weight: 700;
-      color: var(--brand-dark);
-      opacity: 0.88;
+      color: #f5d38a;
+      opacity: 0.95;
     }
 
     .about-grid {
@@ -615,9 +508,14 @@
     .about-list div {
       padding: 14px 16px;
       border-radius: 18px;
-      background: rgba(255, 255, 255, 0.74);
-      border: 1px solid rgba(18, 23, 18, 0.06);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(245, 185, 66, 0.08);
       font-size: 14px;
+      color: var(--muted);
+    }
+
+    .about-list strong {
+      color: #fff;
     }
 
     .split-panel {
@@ -630,12 +528,15 @@
     .panel {
       padding: 28px;
       border-radius: 28px;
+      background: #0f1c2e;
+      border: 1px solid rgba(245, 185, 66, 0.1);
     }
 
     .panel h3 {
       margin: 0 0 10px;
       font-size: 28px;
       line-height: 1.2;
+      color: #fff;
     }
 
     .panel p {
@@ -656,13 +557,15 @@
       gap: 10px;
       padding: 14px 16px;
       border-radius: 18px;
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid rgba(18, 23, 18, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(245, 185, 66, 0.08);
       font-size: 14px;
+      color: var(--muted);
     }
 
     .check-item b {
       font-size: 15px;
+      color: #fff;
     }
 
     .check-mark {
@@ -671,10 +574,11 @@
       border-radius: 999px;
       display: grid;
       place-items: center;
-      background: rgba(63, 77, 60, 0.12);
-      color: var(--brand-dark);
+      background: rgba(245, 185, 66, 0.12);
+      color: #f5b942;
       flex: 0 0 auto;
       font-weight: 700;
+      border: 1px solid rgba(245, 185, 66, 0.12);
     }
 
     .materials-grid {
@@ -685,16 +589,19 @@
 
     .material-card {
       position: relative;
-      padding: 22px;
-      border-radius: 26px;
+      padding: 24px;
+      border-radius: 24px;
       overflow: hidden;
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 246, 239, 0.92));
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      background: #0f1c2e;
+      border: 1px solid rgba(245, 185, 66, 0.16);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
     }
 
     .material-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 22px 48px rgba(18, 26, 18, 0.1);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.34);
+      border-color: rgba(245, 185, 66, 0.32);
     }
 
     .tag-row {
@@ -717,19 +624,22 @@
     }
 
     .tag {
-      background: rgba(199, 162, 86, 0.12);
-      color: #6b5124;
+      background: rgba(245, 185, 66, 0.1);
+      color: #f5d38a;
+      border: 1px solid rgba(245, 185, 66, 0.12);
     }
 
     .preview-chip {
-      background: rgba(63, 77, 60, 0.1);
-      color: var(--brand-dark);
+      background: rgba(255, 255, 255, 0.05);
+      color: #d7deea;
+      border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .material-card h3 {
       margin: 0;
-      font-size: 28px;
+      font-size: 30px;
       letter-spacing: -0.02em;
+      color: #fff;
     }
 
     .material-price {
@@ -750,17 +660,18 @@
       min-height: 46px;
       padding: 0 16px;
       font-size: 14px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(245, 185, 66, 0.15);
+      background: transparent;
+      color: #fff;
+    }
+
+    .action-link:hover {
+      background: rgba(245, 185, 66, 0.08);
     }
 
     .action-link.primary {
       min-height: 46px;
       padding: 0 16px;
-      background: linear-gradient(145deg, var(--brand-dark), var(--brand-2));
-      color: #fff;
-      border-color: transparent;
-      box-shadow: 0 14px 26px rgba(46, 57, 44, 0.2);
     }
 
     .guarantee-strip {
@@ -770,14 +681,14 @@
       grid-template-columns: 1fr auto;
       gap: 16px;
       align-items: center;
-      background:
-        radial-gradient(circle at top left, rgba(199, 162, 86, 0.1), transparent 36%),
-        linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(248, 247, 242, 0.96));
+      background: linear-gradient(180deg, #0d1828 0%, #0f1c2e 100%);
+      border: 1px solid rgba(245, 185, 66, 0.12);
     }
 
     .guarantee-strip h3 {
       margin: 0 0 6px;
       font-size: 24px;
+      color: #fff;
     }
 
     .guarantee-strip p {
@@ -790,6 +701,8 @@
     .preview-panel {
       padding: 22px;
       border-radius: 28px;
+      background: #0f1c2e;
+      border: 1px solid rgba(245, 185, 66, 0.1);
     }
 
     .preview-toolbar {
@@ -803,6 +716,7 @@
 
     .preview-toolbar strong {
       font-size: 15px;
+      color: #fff;
     }
 
     .preview-toolbar span {
@@ -811,8 +725,8 @@
     }
 
     .preview-box {
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(18, 23, 18, 0.08);
+      background: #fff;
+      border: 1px solid rgba(245, 185, 66, 0.08);
       border-radius: 20px;
       overflow: hidden;
     }
@@ -832,7 +746,7 @@
       background: #fff;
       text-align: center;
       font-size: 14px;
-      color: var(--muted);
+      color: #555;
     }
 
     .faq-grid {
@@ -844,11 +758,14 @@
     .faq-item {
       padding: 22px;
       border-radius: 24px;
+      background: #0f1c2e;
+      border: 1px solid rgba(245, 185, 66, 0.1);
     }
 
     .faq-item h3 {
       margin: 0 0 8px;
       font-size: 18px;
+      color: #fff;
     }
 
     .faq-item p {
@@ -865,9 +782,8 @@
       grid-template-columns: 1.1fr 0.9fr;
       gap: 18px;
       align-items: center;
-      background:
-        radial-gradient(circle at top left, rgba(199, 162, 86, 0.1), transparent 36%),
-        linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(248, 247, 242, 0.97));
+      background: linear-gradient(180deg, #0d1828 0%, #0f1c2e 100%);
+      border: 1px solid rgba(245, 185, 66, 0.12);
       box-shadow: var(--shadow-strong);
     }
 
@@ -876,6 +792,7 @@
       font-size: clamp(28px, 4vw, 42px);
       line-height: 1.15;
       max-width: 12ch;
+      color: #fff;
     }
 
     .cta-band p {
@@ -888,8 +805,8 @@
     .cta-box {
       padding: 24px;
       border-radius: 24px;
-      background: rgba(255, 255, 255, 0.86);
-      border: 1px solid rgba(18, 23, 18, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(245, 185, 66, 0.12);
       text-align: center;
     }
 
@@ -898,6 +815,7 @@
       font-size: 30px;
       font-weight: 800;
       margin-bottom: 6px;
+      color: #fff;
     }
 
     .cta-box small {
@@ -915,11 +833,14 @@
     .footer-card {
       padding: 24px;
       border-radius: 26px;
+      background: #0f1c2e;
+      border: 1px solid rgba(245, 185, 66, 0.1);
     }
 
     .footer-card h3 {
       margin: 0 0 8px;
       font-size: 22px;
+      color: #fff;
     }
 
     .footer-card p {
@@ -991,7 +912,7 @@
         grid-template-columns: 1fr;
       }
 
-      .hero-points {
+      .side-stats {
         grid-template-columns: repeat(3, 1fr);
       }
 
@@ -1045,7 +966,6 @@
         padding: 22px;
       }
 
-      .hero-points,
       .benefits,
       .split-panel,
       .materials-grid,
@@ -1103,8 +1023,8 @@
         </nav>
 
         <div class="topbar-actions">
-          <a class="btn-amber" href="#materials">شاهد المواد</a>
-          <a class="btn" href="https://wa.me/966555399239" target="_blank" rel="noopener">اشترك بالمادة</a>
+          <a class="btn" href="#materials">اشترك الآن</a>
+          <a class="btn-secondary" href="#preview">شوف البريفيو</a>
         </div>
       </div>
     </header>
@@ -1117,54 +1037,28 @@
       <section class="hero">
         <div class="hero-grid">
           <div class="hero-main glass">
-            <div class="eyebrow">Final Season • مراجعة مباشرة قبل الاختبار النهائي</div>
-            <h1>Easy Pass (ايزي باس) AOU</h1>
-            <p class="hero-sub">
-              نظام مراجعة نهائية لطلاب AOU يركز على الزبدة فقط قبل الاختبار.
-            </p>
+            <div class="eyebrow">Final Season • مراجعة مباشرة قبل الاختبار</div>
+            <h1>Easy Pass</h1>
+            <p class="hero-sub">مراجعة ذكية للفاينال — بدون تضييع وقت</p>
+            <p class="hero-mini">ملخص + أسئلة متوقعة + Night Exam Mode<br>كل اللي تحتاجه عشان تعدي الاختبار</p>
 
-            <div class="hero-note">
-              شاهد المعاينة أولًا، ثم اشترك مباشرة عبر واتساب.
-            </div>
-
-            <div class="system-bar">
-              <div class="system-pill">📘 Preview قبل الشراء</div>
-              <div class="system-pill">🌙 Night Exam Mode</div>
-              <div class="system-pill">⚡ طلب مباشر</div>
-            </div>
-
-            <div class="price-strip">
-              <div class="price-pill">فاينال فقط — 79 ريال</div>
-              <div class="package-pill">المادة كاملة (ميد + فاينال) — 149 ريال</div>
+            <div class="hero-list">
+              <div class="hero-list-item">✔ <span>مختصر على أهم نقاط الاختبار</span></div>
+              <div class="hero-list-item">✔ <span>مبني على اختبارات سابقة</span></div>
+              <div class="hero-list-item">✔ <span>مراجعة ليلة الاختبار جاهزة</span></div>
             </div>
 
             <div class="hero-actions">
-              <a class="btn" href="https://wa.me/966555399239" target="_blank" rel="noopener">اشترك بالمادة</a>
-              <a class="btn-amber" href="#materials">شاهد المواد المتوفرة</a>
-              <a class="btn-secondary" href="#preview">شاهد المعاينة</a>
-            </div>
-
-            <div class="hero-points">
-              <div class="hero-point">
-                <strong>مراجعة مركزة</strong>
-                <span>الأهم فقط قبل الاختبار.</span>
-              </div>
-              <div class="hero-point">
-                <strong>نسخة لآخر وقت</strong>
-                <span>Night Exam Mode للمراجعة السريعة.</span>
-              </div>
-              <div class="hero-point">
-                <strong>وضوح قبل الطلب</strong>
-                <span>شاهد Preview قبل الاشتراك.</span>
-              </div>
+              <a class="btn" href="https://wa.me/966555399239" target="_blank" rel="noopener">اشترك الآن</a>
+              <a class="btn-secondary" href="#preview">شوف البريفيو</a>
             </div>
           </div>
 
           <aside class="hero-side glass">
             <div class="side-card">
               <span class="label">الفكرة ببساطة</span>
-              <h3>مراجعة أخف وأوضح قبل الفاينال</h3>
-              <p>بدل التشتت بين ملفات كثيرة، Easy Pass يعطيك مسارًا أوضح للمراجعة.</p>
+              <h3>أخف. أوضح. أسرع قبل الفاينال</h3>
+              <p>بدل التشتت بين ملفات كثيرة، Easy Pass يعطيك مراجعة مباشرة تساعدك تركز على المهم فقط.</p>
             </div>
 
             <div class="side-stats">
@@ -1179,32 +1073,6 @@
               <div class="stat-box">
                 <strong>AOU</strong>
                 <span>موجه للجامعة</span>
-              </div>
-            </div>
-
-            <div class="feature-stack">
-              <div class="feature-row">
-                <div class="feature-badge">1</div>
-                <div class="feature-copy">
-                  <strong>اختر المادة</strong>
-                  <span>حدد المادة المناسبة لك من القسم بالأسفل.</span>
-                </div>
-              </div>
-
-              <div class="feature-row">
-                <div class="feature-badge">2</div>
-                <div class="feature-copy">
-                  <strong>شاهد المعاينة</strong>
-                  <span>اطلع على Preview قبل أي خطوة شراء.</span>
-                </div>
-              </div>
-
-              <div class="feature-row">
-                <div class="feature-badge">3</div>
-                <div class="feature-copy">
-                  <strong>اشترك مباشرة</strong>
-                  <span>الطلب يتم عبر واتساب بخطوة واضحة.</span>
-                </div>
               </div>
             </div>
           </aside>
@@ -1247,25 +1115,28 @@
         <div class="section-head">
           <div>
             <h2>كيف يعمل Easy Pass؟</h2>
-            <p>3 خطوات واضحة.</p>
+            <p>3 خطوات واضحة وسريعة.</p>
           </div>
           <div class="floating-note">بسيط ومباشر</div>
         </div>
 
         <div class="how-grid">
           <article class="how-card glass">
-            <h3>1) اختر المادة</h3>
-            <p>تصفح المواد المتوفرة وحدد المادة المطلوبة.</p>
+            <div class="how-icon">1️⃣</div>
+            <h3>اختر المادة</h3>
+            <p>تصفح المواد المتوفرة وحدد المادة المناسبة لك.</p>
           </article>
 
           <article class="how-card glass">
-            <h3>2) شاهد Preview</h3>
-            <p>اطلع على المعاينة قبل الاشتراك.</p>
+            <div class="how-icon">2️⃣</div>
+            <h3>شاهد البريفيو</h3>
+            <p>اطلع على المعاينة أولًا قبل أي خطوة شراء.</p>
           </article>
 
           <article class="how-card glass">
-            <h3>3) اشترك عبر واتساب</h3>
-            <p>رسالة جاهزة وخطوة واضحة للطلب.</p>
+            <div class="how-icon">3️⃣</div>
+            <h3>اشترك وابدأ المراجعة</h3>
+            <p>الطلب يتم عبر واتساب بخطوة واضحة ومباشرة.</p>
           </article>
         </div>
       </section>
@@ -1415,7 +1286,7 @@
         </div>
 
         <div class="materials-grid">
-          <article class="material-card glass">
+          <article class="material-card">
             <div class="tag-row">
               <span class="tag">متوفر</span>
               <span class="preview-chip">Preview جاهز</span>
@@ -1423,12 +1294,12 @@
             <h3>B123</h3>
             <div class="material-price">79 ريال — Final System</div>
             <div class="material-actions">
-              <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%85%D8%A7%D8%AF%D8%A9%20B123" target="_blank" rel="noopener">اشترك بالمادة</a>
-              <a class="action-link" href="preview.html?file=B123.pdf" target="_blank" rel="noopener">عرض الـ Preview</a>
+              <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%85%D8%A7%D8%AF%D8%A9%20B123" target="_blank" rel="noopener">اشترك الآن</a>
+              <a class="action-link" href="preview.html?file=B123.pdf" target="_blank" rel="noopener">شوف البريفيو</a>
             </div>
           </article>
 
-          <article class="material-card glass">
+          <article class="material-card">
             <div class="tag-row">
               <span class="tag">متوفر</span>
               <span class="preview-chip">Preview جاهز</span>
@@ -1436,12 +1307,12 @@
             <h3>BUS110</h3>
             <div class="material-price">79 ريال — Final System</div>
             <div class="material-actions">
-              <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%85%D8%A7%D8%AF%D8%A9%20BUS110" target="_blank" rel="noopener">اشترك بالمادة</a>
-              <a class="action-link" href="preview.html?file=BUS110.pdf" target="_blank" rel="noopener">عرض الـ Preview</a>
+              <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%85%D8%A7%D8%AF%D8%A9%20BUS110" target="_blank" rel="noopener">اشترك الآن</a>
+              <a class="action-link" href="preview.html?file=BUS110.pdf" target="_blank" rel="noopener">شوف البريفيو</a>
             </div>
           </article>
 
-          <article class="material-card glass">
+          <article class="material-card">
             <div class="tag-row">
               <span class="tag">طلب مرتفع</span>
               <span class="preview-chip">Preview جاهز</span>
@@ -1449,12 +1320,12 @@
             <h3>BUS207A</h3>
             <div class="material-price">79 ريال — Final System</div>
             <div class="material-actions">
-              <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%85%D8%A7%D8%AF%D8%A9%20BUS207A" target="_blank" rel="noopener">اشترك بالمادة</a>
-              <a class="action-link" href="preview.html?file=BUS207A.pdf" target="_blank" rel="noopener">عرض الـ Preview</a>
+              <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%85%D8%A7%D8%AF%D8%A9%20BUS207A" target="_blank" rel="noopener">اشترك الآن</a>
+              <a class="action-link" href="preview.html?file=BUS207A.pdf" target="_blank" rel="noopener">شوف البريفيو</a>
             </div>
           </article>
 
-          <article class="material-card glass">
+          <article class="material-card">
             <div class="tag-row">
               <span class="tag">طلب مرتفع</span>
               <span class="preview-chip">Preview جاهز</span>
@@ -1462,12 +1333,12 @@
             <h3>BUS207B</h3>
             <div class="material-price">79 ريال — Final System</div>
             <div class="material-actions">
-              <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%85%D8%A7%D8%AF%D8%A9%20BUS207B" target="_blank" rel="noopener">اشترك بالمادة</a>
-              <a class="action-link" href="preview.html?file=BUS207B.pdf" target="_blank" rel="noopener">عرض الـ Preview</a>
+              <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%85%D8%A7%D8%AF%D8%A9%20BUS207B" target="_blank" rel="noopener">اشترك الآن</a>
+              <a class="action-link" href="preview.html?file=BUS207B.pdf" target="_blank" rel="noopener">شوف البريفيو</a>
             </div>
           </article>
 
-          <article class="material-card glass">
+          <article class="material-card">
             <div class="tag-row">
               <span class="tag">اختيار شائع</span>
               <span class="preview-chip">Preview جاهز</span>
@@ -1475,12 +1346,12 @@
             <h3>BUS310</h3>
             <div class="material-price">79 ريال — Final System</div>
             <div class="material-actions">
-              <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%85%D8%A7%D8%AF%D8%A9%20BUS310" target="_blank" rel="noopener">اشترك بالمادة</a>
-              <a class="action-link" href="preview.html?file=BUS310.pdf" target="_blank" rel="noopener">عرض الـ Preview</a>
+              <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%85%D8%A7%D8%AF%D8%A9%20BUS310" target="_blank" rel="noopener">اشترك الآن</a>
+              <a class="action-link" href="preview.html?file=BUS310.pdf" target="_blank" rel="noopener">شوف البريفيو</a>
             </div>
           </article>
 
-          <article class="material-card glass">
+          <article class="material-card">
             <div class="tag-row">
               <span class="tag">اختيار شائع</span>
               <span class="preview-chip">Preview جاهز</span>
@@ -1488,12 +1359,12 @@
             <h3>LB170</h3>
             <div class="material-price">79 ريال — Final System</div>
             <div class="material-actions">
-              <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%85%D8%A7%D8%AF%D8%A9%20LB170" target="_blank" rel="noopener">اشترك بالمادة</a>
-              <a class="action-link" href="preview.html?file=LB170.pdf" target="_blank" rel="noopener">عرض الـ Preview</a>
+              <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%85%D8%A7%D8%AF%D8%A9%20LB170" target="_blank" rel="noopener">اشترك الآن</a>
+              <a class="action-link" href="preview.html?file=LB170.pdf" target="_blank" rel="noopener">شوف البريفيو</a>
             </div>
           </article>
 
-          <article class="material-card glass">
+          <article class="material-card">
             <div class="tag-row">
               <span class="tag">متوفر</span>
               <span class="preview-chip">Preview جاهز</span>
@@ -1501,12 +1372,12 @@
             <h3>B325</h3>
             <div class="material-price">79 ريال — Final System</div>
             <div class="material-actions">
-              <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%85%D8%A7%D8%AF%D8%A9%20B325" target="_blank" rel="noopener">اشترك بالمادة</a>
-              <a class="action-link" href="preview.html?file=B325.pdf" target="_blank" rel="noopener">عرض الـ Preview</a>
+              <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%85%D8%A7%D8%AF%D8%A9%20B325" target="_blank" rel="noopener">اشترك الآن</a>
+              <a class="action-link" href="preview.html?file=B325.pdf" target="_blank" rel="noopener">شوف البريفيو</a>
             </div>
           </article>
 
-          <article class="material-card glass">
+          <article class="material-card">
             <div class="tag-row">
               <span class="tag">متوفر</span>
               <span class="preview-chip">Preview جاهز</span>
@@ -1514,12 +1385,12 @@
             <h3>SYS210</h3>
             <div class="material-price">79 ريال — Final System</div>
             <div class="material-actions">
-              <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%85%D8%A7%D8%AF%D8%A9%20SYS210" target="_blank" rel="noopener">اشترك بالمادة</a>
-              <a class="action-link" href="preview.html?file=SYS210.pdf" target="_blank" rel="noopener">عرض الـ Preview</a>
+              <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%85%D8%A7%D8%AF%D8%A9%20SYS210" target="_blank" rel="noopener">اشترك الآن</a>
+              <a class="action-link" href="preview.html?file=SYS210.pdf" target="_blank" rel="noopener">شوف البريفيو</a>
             </div>
           </article>
 
-          <article class="material-card glass">
+          <article class="material-card">
             <div class="tag-row">
               <span class="tag">متوفر</span>
               <span class="preview-chip">Preview جاهز</span>
@@ -1527,8 +1398,8 @@
             <h3>SYS280</h3>
             <div class="material-price">79 ريال — Final System</div>
             <div class="material-actions">
-              <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%85%D8%A7%D8%AF%D8%A9%20SYS280" target="_blank" rel="noopener">اشترك بالمادة</a>
-              <a class="action-link" href="preview.html?file=SYS280.pdf" target="_blank" rel="noopener">عرض الـ Preview</a>
+              <a class="action-link primary" href="https://wa.me/966555399239?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%85%D8%A7%D8%AF%D8%A9%20SYS280" target="_blank" rel="noopener">اشترك الآن</a>
+              <a class="action-link" href="preview.html?file=SYS280.pdf" target="_blank" rel="noopener">شوف البريفيو</a>
             </div>
           </article>
         </div>
@@ -1542,7 +1413,7 @@
               شاهد الـ Preview، كوّن انطباعك، ثم اشترك وأنت مرتاح.
             </p>
           </div>
-          <a class="btn-amber" href="#preview">شاهد المعاينة الآن</a>
+          <a class="btn" href="#preview">شوف البريفيو الآن</a>
         </div>
       </section>
 
@@ -1614,7 +1485,7 @@
           <span class="big">فاينال فقط — 79 ريال</span>
           <small>الخيار الأساسي الآن</small>
           <div style="height:14px"></div>
-          <a class="btn" href="https://wa.me/966555399239" target="_blank" rel="noopener">اشترك بالمادة</a>
+          <a class="btn" href="https://wa.me/966555399239" target="_blank" rel="noopener">اشترك الآن</a>
         </div>
       </section>
 
